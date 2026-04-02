@@ -73,19 +73,20 @@
     <style>
         /* ========== CSS VARIABLES ========== */
         :root {
-            --navy: #0D1B2A;
-            --deep-blue: #1B2838;
-            --midnight: #162230;
-            --gold: #C9A96E;
-            --gold-light: #D4BA85;
-            --cream: #FAF6F0;
-            --cream-dark: #F0EBE3;
+            --navy: #1A2332;
+            --deep-blue: #1A5F9E;
+            --midnight: #152B45;
+            --blue: #2793EB;
+            --blue-light: #30C6F3;
+            --blue-pale: #E8F4FD;
+            --cream: #FAFBFC;
+            --cream-dark: #F0F4F8;
             --white: #FFFFFF;
             --charcoal: #2C2C2C;
             --text: #3A3A3A;
-            --text-light: #6B6B6B;
-            --blue-accent: #6FB3E5;
-            --border: rgba(201,169,110,0.2);
+            --text-light: #5A5A5A;
+            --blue-accent: #2793EB;
+            --border: rgba(39,147,235,0.15);
             --section-pad: clamp(60px, 8vw, 120px);
         }
 
@@ -105,7 +106,7 @@
         h3 { font-size: clamp(1.3rem, 3vw, 1.8rem); font-style: italic; color: var(--text-light); }
         h4 { font-size: 1.2rem; }
 
-        a { color: var(--gold); text-decoration: none; transition: color 0.3s ease; }
+        a { color: var(--blue); text-decoration: none; transition: color 0.3s ease; }
         a:hover { color: var(--navy); }
 
         .btn {
@@ -113,16 +114,16 @@
             padding: clamp(12px, 1.5vw, 18px) clamp(24px, 3vw, 48px);
             font-size: 1rem;
             font-weight: 600;
-            border: 2px solid var(--gold);
+            border: 2px solid var(--blue);
             border-radius: 2px;
             cursor: pointer;
             transition: all 0.3s ease;
             text-align: center;
         }
-        .btn-gold { background: var(--gold); color: var(--navy); }
-        .btn-gold:hover { background: var(--gold-light); border-color: var(--gold-light); }
-        .btn-outline { background: transparent; color: var(--gold); }
-        .btn-outline:hover { background: var(--gold); color: var(--navy); }
+        .btn-blue { background: var(--blue); color: var(--white); }
+        .btn-blue:hover { background: var(--deep-blue); border-color: var(--deep-blue); }
+        .btn-outline { background: transparent; color: var(--blue); }
+        .btn-outline:hover { background: var(--blue); color: var(--white); }
 
         /* ========== NAVIGATION ========== */
         nav {
@@ -154,7 +155,7 @@
         .logo img { height: 40px; width: auto; }
         .nav-links { display: flex; gap: clamp(20px, 4vw, 40px); }
         .nav-links a { color: var(--cream); font-size: 0.95rem; transition: color 0.3s; }
-        .nav-links a:hover { color: var(--gold); }
+        .nav-links a:hover { color: var(--blue); }
 
         #hamburger { display: none; background: none; border: none; cursor: pointer; flex-direction: column; gap: 6px; }
         .hamburger-line { width: 24px; height: 2px; background: var(--cream); transition: all 0.3s ease; }
@@ -207,14 +208,14 @@
             filter: brightness(0.4);
         }
         .hero-content { position: relative; z-index: 1; }
-        .hero h1 { color: var(--gold); margin-bottom: 20px; }
+        .hero h1 { color: var(--blue); margin-bottom: 20px; }
         .hero p { font-size: 1.2rem; max-width: 600px; margin: 0 auto; }
 
         /* ========== ABOUT SECTION ========== */
         section { padding: var(--section-pad) 0; }
 
         .text-center { text-align: center; margin-bottom: clamp(40px, 5vw, 80px); }
-        .section-eyebrow { font-size: 0.85rem; letter-spacing: 2px; color: var(--gold); text-transform: uppercase; }
+        .section-eyebrow { font-size: 0.85rem; letter-spacing: 2px; color: var(--blue); text-transform: uppercase; }
         .section-title { color: var(--navy); margin-top: 12px; }
 
         .about-grid {
@@ -251,7 +252,7 @@
             padding: var(--section-pad) 0;
             text-align: center;
         }
-        .cta-section h2 { color: var(--gold); margin-bottom: 20px; }
+        .cta-section h2 { color: var(--blue); margin-bottom: 20px; }
         .cta-btns {
             display: flex;
             gap: 20px;
@@ -277,11 +278,11 @@
         }
         .footer-brand img { height: 40px; margin-bottom: 16px; }
         .footer-brand p { font-size: 0.95rem; line-height: 1.6; color: var(--text-light); }
-        footer h4 { color: var(--gold); margin-bottom: 16px; }
+        footer h4 { color: var(--blue); margin-bottom: 16px; }
         .footer-links { list-style: none; }
         .footer-links li { margin-bottom: 12px; }
         .footer-links a { color: var(--cream); transition: color 0.3s; }
-        .footer-links a:hover { color: var(--gold); }
+        .footer-links a:hover { color: var(--blue); }
         .footer-bottom {
             max-width: 1200px;
             margin: 0 auto;
@@ -404,22 +405,22 @@
         </div>
         <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 30px; margin-top: 50px;">
             <div style="text-align: center;">
-                <div style="font-size: 3rem; font-family: 'Cormorant Garamond'; color: var(--gold); margin-bottom: 16px;">01</div>
+                <div style="font-size: 3rem; font-family: 'Cormorant Garamond'; color: var(--blue); margin-bottom: 16px;">01</div>
                 <h4>Design & Carve</h4>
                 <p style="font-size: 0.95rem; color: var(--text-light);">Each design is hand-carved in jeweller's wax, capturing every detail and texture.</p>
             </div>
             <div style="text-align: center;">
-                <div style="font-size: 3rem; font-family: 'Cormorant Garamond'; color: var(--gold); margin-bottom: 16px;">02</div>
+                <div style="font-size: 3rem; font-family: 'Cormorant Garamond'; color: var(--blue); margin-bottom: 16px;">02</div>
                 <h4>Create Mould</h4>
                 <p style="font-size: 0.95rem; color: var(--text-light);">The wax model is attached to a tree and encased in plaster to create a negative mould.</p>
             </div>
             <div style="text-align: center;">
-                <div style="font-size: 3rem; font-family: 'Cormorant Garamond'; color: var(--gold); margin-bottom: 16px;">03</div>
+                <div style="font-size: 3rem; font-family: 'Cormorant Garamond'; color: var(--blue); margin-bottom: 16px;">03</div>
                 <h4>Burnout & Cast</h4>
                 <p style="font-size: 0.95rem; color: var(--text-light);">The mould is kiln-fired to burn away the wax, then molten metal is poured into the cavity.</p>
             </div>
             <div style="text-align: center;">
-                <div style="font-size: 3rem; font-family: 'Cormorant Garamond'; color: var(--gold); margin-bottom: 16px;">04</div>
+                <div style="font-size: 3rem; font-family: 'Cormorant Garamond'; color: var(--blue); margin-bottom: 16px;">04</div>
                 <h4>Finish & Polish</h4>
                 <p style="font-size: 0.95rem; color: var(--text-light);">The raw casting is refined, stones are set, and the piece is polished to perfection.</p>
             </div>
@@ -435,7 +436,7 @@
             Explore custom commissions, shop ready-made pieces, or learn the craft yourself through our courses.
         </p>
         <div class="cta-btns">
-            <a href="https://www.katieflinndesign.com/shop" class="btn btn-gold">Shop Jewellery</a>
+            <a href="https://www.katieflinndesign.com/shop" class="btn btn-blue">Shop Jewellery</a>
             <a href="KatieFlinnDesign_Contact.html" class="btn btn-outline">Commission a Piece</a>
             <a href="KatieFlinnDesign_Courses.html" class="btn btn-outline">View Courses</a>
         </div>

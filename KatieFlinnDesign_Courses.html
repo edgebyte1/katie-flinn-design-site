@@ -103,15 +103,20 @@
     
     <style>
         :root {
-            --navy: #0D1B2A;
-            --deep-blue: #1B2838;
-            --gold: #C9A96E;
-            --gold-light: #D4BA85;
-            --cream: #FAF6F0;
-            --cream-dark: #F0EBE3;
+            --navy: #1A2332;
+            --deep-blue: #1A5F9E;
+            --midnight: #152B45;
+            --blue: #2793EB;
+            --blue-light: #30C6F3;
+            --blue-pale: #E8F4FD;
+            --cream: #FAFBFC;
+            --cream-dark: #F0F4F8;
+            --white: #FFFFFF;
             --charcoal: #2C2C2C;
             --text: #3A3A3A;
-            --text-light: #6B6B6B;
+            --text-light: #5A5A5A;
+            --blue-accent: #2793EB;
+            --border: rgba(39,147,235,0.15);
             --font-heading: 'Cormorant Garamond', Georgia, serif;
             --font-body: 'DM Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
             --transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
@@ -162,7 +167,7 @@
             font-family: var(--font-heading);
             font-size: clamp(18px, 2vw, 24px);
             font-weight: 600;
-            color: var(--gold);
+            color: var(--blue);
             text-decoration: none;
             letter-spacing: 0.5px;
         }
@@ -183,11 +188,11 @@
         }
         
         .nav-links a:hover {
-            color: var(--gold);
+            color: var(--blue);
         }
         
         .btn-nav {
-            background-color: var(--gold);
+            background-color: var(--blue);
             color: var(--navy);
             padding: 10px 24px;
             border-radius: 4px;
@@ -200,7 +205,7 @@
         }
         
         .btn-nav:hover {
-            background-color: var(--gold-light);
+            background-color: var(--blue-light);
             transform: translateY(-2px);
         }
         
@@ -217,7 +222,7 @@
             display: block;
             width: 24px;
             height: 2px;
-            background-color: var(--gold);
+            background-color: var(--blue);
             margin: 6px 0;
             transition: var(--transition);
         }
@@ -253,7 +258,7 @@
             right: 0;
             width: 600px;
             height: 600px;
-            background: radial-gradient(circle, rgba(201, 169, 110, 0.08) 0%, transparent 70%);
+            background: radial-gradient(circle, rgba(39, 147, 235, 0.08) 0%, transparent 70%);
             pointer-events: none;
         }
         
@@ -267,7 +272,7 @@
             font-family: var(--font-body);
             font-size: 13px;
             font-weight: 600;
-            color: var(--gold);
+            color: var(--blue);
             letter-spacing: 2px;
             text-transform: uppercase;
             margin-bottom: 20px;
@@ -289,7 +294,7 @@
         h1 em {
             font-style: italic;
             font-weight: 500;
-            color: var(--gold);
+            color: var(--blue);
         }
         
         .hero-sub {
@@ -310,7 +315,7 @@
             animation: slideUp 0.8s ease-out 0.5s forwards;
         }
         
-        .btn-gold, .btn-outline {
+        .btn-blue, .btn-outline {
             padding: 16px 32px;
             border-radius: 4px;
             font-family: var(--font-body);
@@ -324,16 +329,16 @@
             display: inline-block;
             text-align: center;
         }
-        
-        .btn-gold {
-            background-color: var(--gold);
-            color: var(--navy);
+
+        .btn-blue {
+            background-color: var(--blue);
+            color: var(--white);
         }
-        
-        .btn-gold:hover {
-            background-color: var(--gold-light);
+
+        .btn-blue:hover {
+            background-color: var(--deep-blue);
             transform: translateY(-3px);
-            box-shadow: 0 8px 20px rgba(201, 169, 110, 0.3);
+            box-shadow: 0 8px 20px rgba(39, 147, 235, 0.3);
         }
         
         .btn-outline {
@@ -413,13 +418,13 @@
         }
         
         .tier-card.featured {
-            border: 2px solid var(--gold);
+            border: 2px solid var(--blue);
             transform: scale(1.05);
         }
         
         .tier-card.featured:hover {
             transform: scale(1.05) translateY(-8px);
-            box-shadow: 0 20px 50px rgba(201, 169, 110, 0.25);
+            box-shadow: 0 20px 50px rgba(39, 147, 235, 0.25);
         }
         
         .tier-card.featured::before {
@@ -428,8 +433,8 @@
             top: -14px;
             left: 50%;
             transform: translateX(-50%);
-            background-color: var(--gold);
-            color: var(--navy);
+            background-color: var(--blue);
+            color: var(--white);
             padding: 6px 18px;
             font-size: 12px;
             font-weight: 700;
@@ -487,7 +492,7 @@
         
         .tier-features li::before {
             content: '✓';
-            color: var(--gold);
+            color: var(--blue);
             font-weight: 700;
             margin-right: 12px;
             font-size: 16px;
@@ -528,7 +533,7 @@
             font-family: var(--font-heading);
             font-size: 48px;
             font-weight: 700;
-            color: var(--gold);
+            color: var(--blue);
             margin-bottom: 12px;
         }
         
@@ -580,12 +585,12 @@
             height: 120px;
             border-radius: 50%;
             margin: 0 auto 20px;
-            background-color: rgba(201, 169, 110, 0.2);
+            background-color: rgba(39, 147, 235, 0.2);
             display: flex;
             align-items: center;
             justify-content: center;
             font-size: 48px;
-            border: 3px solid var(--gold);
+            border: 3px solid var(--blue);
         }
         
         .student-name {
@@ -597,7 +602,7 @@
         
         .student-title {
             font-size: 13px;
-            color: var(--gold);
+            color: var(--blue);
             margin-bottom: 12px;
         }
         
@@ -647,7 +652,7 @@
         }
         
         .faq-q:hover {
-            color: var(--gold);
+            color: var(--blue);
         }
         
         .faq-toggle {
@@ -656,7 +661,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            color: var(--gold);
+            color: var(--blue);
             font-size: 20px;
             transition: var(--transition);
         }
@@ -704,7 +709,7 @@
             line-height: 1.8;
         }
         
-        .cta-banner .btn-gold {
+        .cta-banner .btn-blue {
             margin: 0 auto;
         }
         
@@ -727,7 +732,7 @@
         .footer-brand h3 {
             font-family: var(--font-heading);
             font-size: 20px;
-            color: var(--gold);
+            color: var(--blue);
             margin-bottom: 12px;
         }
         
@@ -741,7 +746,7 @@
             font-family: var(--font-body);
             font-size: 13px;
             font-weight: 600;
-            color: var(--gold);
+            color: var(--blue);
             text-transform: uppercase;
             letter-spacing: 0.5px;
             margin-bottom: 16px;
@@ -763,11 +768,11 @@
         }
         
         .footer-links a:hover {
-            color: var(--gold);
+            color: var(--blue);
         }
         
         .footer-bottom {
-            border-top: 1px solid rgba(201, 169, 110, 0.2);
+            border-top: 1px solid rgba(39, 147, 235, 0.2);
             padding-top: 30px;
             text-align: center;
             font-size: 12px;
@@ -804,12 +809,12 @@
         }
         
         .cookie-text a {
-            color: var(--gold);
+            color: var(--blue);
             text-decoration: none;
         }
         
         .cookie-accept {
-            background-color: var(--gold);
+            background-color: var(--blue);
             color: var(--navy);
             border: none;
             padding: 10px 24px;
@@ -823,7 +828,7 @@
         }
         
         .cookie-accept:hover {
-            background-color: var(--gold-light);
+            background-color: var(--blue-light);
         }
         
         /* Responsive */
@@ -864,7 +869,7 @@
                 flex-direction: column;
             }
             
-            .btn-gold, .btn-outline {
+            .btn-blue, .btn-outline {
                 width: 100%;
             }
             
@@ -940,7 +945,7 @@
             <h1>Learn to Make <em>High-End Jewellery</em></h1>
             <p class="hero-sub">No bullshit courses. Just excellent jewellery education. Choose your path: learn individual tools, dive into specific techniques, or master everything with our Full Bundle. All with lifetime access.</p>
             <div class="hero-ctas">
-                <button class="btn-gold" onclick="window.location.href='https://katieflinndesign.podia.com/courses'">Get the Full Bundle</button>
+                <button class="btn-blue" onclick="window.location.href='https://katieflinndesign.podia.com/courses'">Get the Full Bundle</button>
                 <button class="btn-outline" onclick="document.getElementById('courses').scrollIntoView({behavior: 'smooth'})">Explore Modules</button>
             </div>
         </div>
@@ -962,7 +967,7 @@
                     <li>Lifetime access</li>
                     <li>Community feedback</li>
                 </ul>
-                <button class="btn-gold tier-cta" onclick="window.location.href='https://katieflinndesign.podia.com/courses'">Browse Modules</button>
+                <button class="btn-blue tier-cta" onclick="window.location.href='https://katieflinndesign.podia.com/courses'">Browse Modules</button>
             </div>
             
             <!-- Tier 2: Individual Courses -->
@@ -978,7 +983,7 @@
                     <li>Community feedback</li>
                     <li>Q&A support</li>
                 </ul>
-                <button class="btn-gold tier-cta" onclick="window.location.href='https://katieflinndesign.podia.com/courses'">View Courses</button>
+                <button class="btn-blue tier-cta" onclick="window.location.href='https://katieflinndesign.podia.com/courses'">View Courses</button>
             </div>
             
             <!-- Tier 3: Full Bundle -->
@@ -995,7 +1000,7 @@
                     <li>Community feedback</li>
                     <li>Exclusive updates</li>
                 </ul>
-                <button class="btn-gold tier-cta" onclick="window.location.href='https://katieflinndesign.podia.com/courses'">Get Full Bundle</button>
+                <button class="btn-blue tier-cta" onclick="window.location.href='https://katieflinndesign.podia.com/courses'">Get Full Bundle</button>
             </div>
         </div>
     </section>
@@ -1116,7 +1121,7 @@
     <section class="cta-banner">
         <h2>Ready to Begin Your Jewellery Journey?</h2>
         <p>Book a free intro call with Katie to discuss which course path is right for you. No pressure, just genuine guidance.</p>
-        <button class="btn-gold" onclick="window.location.href='https://calendly.com/katieflinndesign'">Schedule Free Intro Call</button>
+        <button class="btn-blue" onclick="window.location.href='https://calendly.com/katieflinndesign'">Schedule Free Intro Call</button>
     </section>
     
     <!-- Footer -->
@@ -1152,7 +1157,7 @@
             </div>
         </div>
         <div class="footer-bottom">
-            <p>&copy; 2026 Katie Flinn Design. All rights reserved. | <a href="#privacy" style="color: var(--gold);">Privacy Policy</a> | <a href="#terms" style="color: var(--gold);">Terms of Service</a></p>
+            <p>&copy; 2026 Katie Flinn Design. All rights reserved. | <a href="#privacy" style="color: var(--blue);">Privacy Policy</a> | <a href="#terms" style="color: var(--blue);">Terms of Service</a></p>
         </div>
     </footer>
     
@@ -1229,7 +1234,7 @@
         }
         
         // Track course interest when buttons are clicked
-        document.querySelectorAll('.btn-gold, .btn-outline').forEach(btn => {
+        document.querySelectorAll('.btn-blue, .btn-outline').forEach(btn => {
             btn.addEventListener('click', function() {
                 trackEvent('view_item', {
                     items: [{
