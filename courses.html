@@ -164,12 +164,15 @@
         }
         
         .nav-logo {
-            font-family: var(--font-heading);
-            font-size: clamp(18px, 2vw, 24px);
-            font-weight: 600;
-            color: var(--blue);
+            display: flex;
+            align-items: center;
             text-decoration: none;
-            letter-spacing: 0.5px;
+            transition: var(--transition);
+        }
+
+        .nav-logo img {
+            height: 40px;
+            width: auto;
         }
         
         .nav-links {
@@ -501,7 +504,190 @@
         .tier-cta {
             width: 100%;
         }
-        
+
+        /* Pricing Comparison Table */
+        .pricing-comparison {
+            margin-top: 80px;
+            padding: 60px 40px;
+            background-color: var(--cream);
+            border-radius: 12px;
+        }
+
+        .comparison-title {
+            font-family: var(--font-heading);
+            font-size: 36px;
+            font-weight: 600;
+            color: var(--navy);
+            text-align: center;
+            margin-bottom: 50px;
+            letter-spacing: -0.5px;
+        }
+
+        .comparison-table {
+            max-width: 1000px;
+            margin: 0 auto;
+            border: 2px solid var(--navy);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0, 30, 80, 0.08);
+        }
+
+        .table-header {
+            display: grid;
+            grid-template-columns: 2fr 1.5fr 1.5fr 1.5fr;
+            background-color: var(--navy);
+            gap: 0;
+        }
+
+        .table-header .table-cell {
+            color: var(--white);
+            font-weight: 700;
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .table-row {
+            display: grid;
+            grid-template-columns: 2fr 1.5fr 1.5fr 1.5fr;
+            gap: 0;
+            border-bottom: 1px solid #e0e0e0;
+            background-color: var(--white);
+        }
+
+        .table-row:last-child {
+            border-bottom: none;
+        }
+
+        .table-row:nth-child(even) {
+            background-color: #fafafa;
+        }
+
+        .table-cell {
+            padding: 20px 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            font-size: 14px;
+            color: var(--text);
+            line-height: 1.5;
+            border-right: 1px solid #e0e0e0;
+        }
+
+        .table-cell:last-child {
+            border-right: none;
+        }
+
+        .table-row .table-cell:first-child {
+            justify-content: flex-start;
+            text-align: left;
+            padding: 20px 20px;
+            font-weight: 600;
+            color: var(--navy);
+            background-color: inherit;
+        }
+
+        .feature-name {
+            justify-content: flex-start;
+            text-align: left;
+            font-weight: 600;
+            color: var(--navy);
+            padding: 20px 20px;
+        }
+
+        .featured-cell {
+            background-color: var(--blue);
+            color: var(--white);
+            font-weight: 600;
+        }
+
+        @media (max-width: 1024px) {
+            .comparison-table {
+                max-width: 100%;
+            }
+
+            .table-header,
+            .table-row {
+                grid-template-columns: 2fr 1fr 1fr 1fr;
+            }
+
+            .table-cell {
+                padding: 16px 12px;
+                font-size: 13px;
+            }
+
+            .comparison-title {
+                font-size: 28px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .pricing-comparison {
+                margin-top: 60px;
+                padding: 40px 20px;
+            }
+
+            .comparison-table {
+                border: 1px solid var(--navy);
+            }
+
+            .table-header,
+            .table-row {
+                grid-template-columns: 1fr;
+            }
+
+            .table-header {
+                display: none;
+            }
+
+            .table-row {
+                margin-bottom: 20px;
+                border: 1px solid #e0e0e0;
+                border-radius: 8px;
+                padding: 0;
+                display: block;
+            }
+
+            .table-cell {
+                display: flex;
+                padding: 12px 16px;
+                text-align: right;
+                justify-content: space-between;
+                align-items: center;
+                border-right: none;
+                border-bottom: 1px solid #e0e0e0;
+            }
+
+            .table-cell:last-child {
+                border-bottom: none;
+            }
+
+            .table-row .table-cell:first-child {
+                text-align: left;
+                font-weight: 700;
+                background-color: #f0f0f0;
+                padding: 14px 16px;
+            }
+
+            .table-cell::before {
+                content: attr(data-label);
+                font-weight: 700;
+                color: var(--navy);
+                margin-right: 12px;
+            }
+
+            .featured-cell {
+                background-color: #e8f0ff;
+                color: var(--navy);
+            }
+
+            .comparison-title {
+                font-size: 24px;
+                margin-bottom: 30px;
+            }
+        }
+
         /* Curriculum Section */
         .curriculum {
             background-color: var(--cream);
@@ -509,10 +695,16 @@
         
         .curriculum-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            grid-template-columns: repeat(2, 1fr);
             gap: 40px;
             max-width: 1200px;
             margin: 0 auto;
+        }
+
+        @media (max-width: 768px) {
+            .curriculum-grid {
+                grid-template-columns: 1fr;
+            }
         }
         
         .curriculum-card {
@@ -563,47 +755,77 @@
         
         .showcase-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            grid-template-columns: repeat(2, 1fr);
             gap: 30px;
             max-width: 1000px;
             margin: 0 auto;
+        }
+
+        @media (max-width: 768px) {
+            .showcase-grid {
+                grid-template-columns: 1fr;
+            }
         }
         
         .student-card {
             text-align: center;
             opacity: 0;
             animation: fadeIn 0.8s ease-out forwards;
+            border-radius: 12px;
+            overflow: hidden;
+            background-color: #f8f8f8;
         }
-        
+
         .student-card:nth-child(1) { animation-delay: 0.1s; }
         .student-card:nth-child(2) { animation-delay: 0.2s; }
         .student-card:nth-child(3) { animation-delay: 0.3s; }
         .student-card:nth-child(4) { animation-delay: 0.4s; }
-        
+        .student-card:nth-child(5) { animation-delay: 0.5s; }
+
+        .student-link {
+            text-decoration: none;
+            color: inherit;
+            display: block;
+            padding: 0;
+        }
+
+        .student-link:hover .student-image {
+            transform: scale(1.05);
+            opacity: 0.9;
+        }
+
         .student-image {
-            width: 120px;
-            height: 120px;
-            border-radius: 50%;
-            margin: 0 auto 20px;
-            background-color: rgba(39, 147, 235, 0.2);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 48px;
-            border: 3px solid var(--blue);
+            width: 100%;
+            height: 280px;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.3s ease, opacity 0.3s ease;
         }
         
         .student-name {
             font-family: var(--font-heading);
             font-size: 18px;
             font-weight: 600;
-            margin-bottom: 8px;
+            margin-bottom: 6px;
+            padding: 16px 12px 0;
+            display: block;
         }
-        
+
         .student-title {
             font-size: 13px;
             color: var(--blue);
-            margin-bottom: 12px;
+            margin-bottom: 8px;
+            padding: 0 12px;
+            display: block;
+        }
+
+        .instagram-handle {
+            font-size: 12px;
+            color: #888;
+            padding: 0 12px 16px;
+            display: block;
+            margin: 0;
+            font-weight: 500;
         }
         
         .student-quote {
@@ -923,7 +1145,7 @@
     <!-- Navigation -->
     <nav>
         <div class="nav-inner">
-            <a href="#" class="nav-logo">Katie Flinn Design</a>
+            <a href="index.html" class="nav-logo"><img src="images/logo/KFD_BLUE_V3.png" alt="Katie Flinn Design" style="height:40px; filter:brightness(1.2);"></a>
             <div class="nav-links" id="navLinks">
                 <a href="#courses">Courses</a>
                 <a href="#curriculum">Curriculum</a>
@@ -1003,6 +1225,75 @@
                 <button class="btn-blue tier-cta" onclick="window.location.href='https://katieflinndesign.podia.com/courses'">Get Full Bundle</button>
             </div>
         </div>
+
+        <!-- Detailed Pricing Comparison Table -->
+        <div class="pricing-comparison">
+            <h3 class="comparison-title">Compare Your Options</h3>
+            <div class="comparison-table">
+                <div class="table-header">
+                    <div class="table-cell feature-name">Feature</div>
+                    <div class="table-cell">Tools Module</div>
+                    <div class="table-cell">Individual Course</div>
+                    <div class="table-cell">Full Bundle</div>
+                </div>
+
+                <div class="table-row">
+                    <div class="table-cell feature-name">Price</div>
+                    <div class="table-cell">$60</div>
+                    <div class="table-cell">$599-$850</div>
+                    <div class="table-cell featured-cell">$1,222</div>
+                </div>
+
+                <div class="table-row">
+                    <div class="table-cell feature-name">Video Content</div>
+                    <div class="table-cell">20-30 min</div>
+                    <div class="table-cell">7-8 hours</div>
+                    <div class="table-cell featured-cell">15+ hours</div>
+                </div>
+
+                <div class="table-row">
+                    <div class="table-cell feature-name">Lifetime Access</div>
+                    <div class="table-cell" style="color:var(--blue);font-weight:700;">&#10003;</div>
+                    <div class="table-cell" style="color:var(--blue);font-weight:700;">&#10003;</div>
+                    <div class="table-cell featured-cell">&#10003;</div>
+                </div>
+
+                <div class="table-row">
+                    <div class="table-cell feature-name">Downloadable Resources</div>
+                    <div class="table-cell" style="color:var(--blue);font-weight:700;">&#10003;</div>
+                    <div class="table-cell" style="color:var(--blue);font-weight:700;">&#10003;</div>
+                    <div class="table-cell featured-cell">&#10003;</div>
+                </div>
+
+                <div class="table-row">
+                    <div class="table-cell feature-name">Community Feedback</div>
+                    <div class="table-cell" style="color:var(--blue);font-weight:700;">&#10003;</div>
+                    <div class="table-cell" style="color:var(--blue);font-weight:700;">&#10003;</div>
+                    <div class="table-cell featured-cell">&#10003;</div>
+                </div>
+
+                <div class="table-row">
+                    <div class="table-cell feature-name">Q&A Support</div>
+                    <div class="table-cell" style="color:#ccc;">&#10007;</div>
+                    <div class="table-cell" style="color:var(--blue);font-weight:700;">&#10003;</div>
+                    <div class="table-cell featured-cell">Priority</div>
+                </div>
+
+                <div class="table-row">
+                    <div class="table-cell feature-name">Exclusive Updates</div>
+                    <div class="table-cell" style="color:#ccc;">&#10007;</div>
+                    <div class="table-cell" style="color:#ccc;">&#10007;</div>
+                    <div class="table-cell featured-cell">&#10003;</div>
+                </div>
+
+                <div class="table-row">
+                    <div class="table-cell feature-name">Best For</div>
+                    <div class="table-cell">Learning specific techniques</div>
+                    <div class="table-cell">Deep specialization</div>
+                    <div class="table-cell featured-cell">Comprehensive mastery</div>
+                </div>
+            </div>
+        </div>
     </section>
     
     <!-- Curriculum Section -->
@@ -1037,28 +1328,36 @@
         <h2 class="section-title">Learn From Others Like You</h2>
         <div class="showcase-grid">
             <div class="student-card">
-                <div class="student-image">💎</div>
-                <h3 class="student-name">Emma Thompson</h3>
-                <p class="student-title">Jewellery Designer</p>
-                <p class="student-quote">"The courses transformed how I approach design. Katie's teaching is clear, practical, and genuinely inspiring."</p>
+                <a href="https://instagram.com/islestudio_" target="_blank" class="student-link">
+                    <img src="images/course/student-work-1.jpg" alt="Saskia Heyns' jewellery work" class="student-image">
+                    <h3 class="student-name">Saskia Heyns</h3>
+                    <p class="student-title">Jewellery Designer</p>
+                    <p class="instagram-handle">@islestudio_</p>
+                </a>
             </div>
             <div class="student-card">
-                <div class="student-image">✨</div>
-                <h3 class="student-name">Sophie Chen</h3>
-                <p class="student-title">Jewellery Maker</p>
-                <p class="student-quote">"I went from complete beginner to selling pieces within 6 months. Best investment I've made in my craft."</p>
+                <a href="https://instagram.com/loom__studio" target="_blank" class="student-link">
+                    <img src="images/course/student-work-2.jpg" alt="Jordy Todd's jewellery work" class="student-image">
+                    <h3 class="student-name">Jordy Todd</h3>
+                    <p class="student-title">Studio Maker</p>
+                    <p class="instagram-handle">@loom__studio</p>
+                </a>
             </div>
             <div class="student-card">
-                <div class="student-image">🎨</div>
-                <h3 class="student-name">Jemma Williams</h3>
-                <p class="student-title">Studio Owner</p>
-                <p class="student-quote">"The Full Bundle gave me everything I needed. I now run my own jewellery studio with confidence."</p>
+                <a href="https://instagram.com/bygemma.hewson" target="_blank" class="student-link">
+                    <img src="images/course/student-work-3.jpg" alt="Gemma Hewson's jewellery work" class="student-image">
+                    <h3 class="student-name">Gemma Hewson</h3>
+                    <p class="student-title">Fine Jewellery Creator</p>
+                    <p class="instagram-handle">@bygemma.hewson</p>
+                </a>
             </div>
             <div class="student-card">
-                <div class="student-image">👑</div>
-                <h3 class="student-name">Olivia Rodriguez</h3>
-                <p class="student-title">Professional Maker</p>
-                <p class="student-quote">"High-end instruction without the pretension. Katie understands what modern makers actually need."</p>
+                <a href="https://instagram.com/siren_ofthe_sea" target="_blank" class="student-link">
+                    <img src="images/course/student-work-4.jpg" alt="Cristy Kantor's jewellery work" class="student-image">
+                    <h3 class="student-name">Cristy Kantor</h3>
+                    <p class="student-title">Artisan Maker</p>
+                    <p class="instagram-handle">@siren_ofthe_sea</p>
+                </a>
             </div>
         </div>
     </section>

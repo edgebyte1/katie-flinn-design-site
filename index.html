@@ -129,6 +129,12 @@
             font-size: 0.85rem; letter-spacing: 0.08em; text-transform: uppercase;
             font-weight: 500; transition: color 0.3s;
         }
+        .nav-links a { position: relative; }
+        .nav-links a::after {
+            content: ''; position: absolute; bottom: -6px; left: 0; width: 0;
+            height: 2px; background: var(--blue); transition: width 0.3s;
+        }
+        .nav-links a.active::after { width: 100%; }
         .nav-links a:hover { color: var(--blue); }
         .nav-cta {
             background: var(--blue); color: var(--navy) !important;
@@ -359,6 +365,27 @@
         .btn-tier:hover { background: var(--deep-blue); }
         .tier-card.featured .btn-tier { background: var(--blue); color: var(--navy); }
 
+        /* Explore More Popups */
+        .explore-trigger { position: relative; display: inline-block; width: 100%; }
+        .explore-popup {
+            display: none; position: absolute; bottom: 100%; left: 50%;
+            transform: translateX(-50%); width: 320px; padding: 28px;
+            background: var(--white); border: 1px solid var(--border);
+            box-shadow: 0 20px 60px rgba(0,0,0,0.12); z-index: 100;
+            text-align: left; margin-bottom: 12px;
+        }
+        .explore-popup::after {
+            content: ''; position: absolute; bottom: -8px; left: 50%;
+            transform: translateX(-50%) rotate(45deg);
+            width: 16px; height: 16px; background: var(--white);
+            border-right: 1px solid var(--border); border-bottom: 1px solid var(--border);
+        }
+        .explore-trigger:hover .explore-popup { display: block; }
+        .explore-popup h4 { font-family: var(--font-heading); font-size: 1.2rem; margin-bottom: 12px; color: var(--charcoal); }
+        .explore-popup p { font-size: 0.9rem; color: var(--text-light); line-height: 1.7; margin-bottom: 16px; }
+        .popup-link { font-size: 0.8rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--blue); text-decoration: none; font-weight: 600; }
+        .popup-link:hover { color: var(--deep-blue); }
+
         /* ========== STUDENT SHOWCASE ========== */
         .students-row {
             display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -394,18 +421,18 @@
         }
         .mentoring-price small { font-size: 1rem; color: rgba(250,246,240,0.5); }
 
-        /* ========== TESTIMONIALS ========== */
+        /* ========== TESTIMONIALS CAROUSEL ========== */
         .testimonials-section { background: var(--cream); }
-        .testimonial-grid {
-            display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 32px;
-        }
+        .testimonial-carousel { position: relative; overflow: hidden; margin-top: 48px; }
+        .carousel-track { display: flex; transition: transform 0.5s ease; }
         .testimonial-card {
+            min-width: calc(33.333% - 22px); margin: 0 11px;
             background: var(--white); padding: 40px;
-            border-left: 3px solid var(--blue);
+            border-left: 3px solid var(--blue); flex-shrink: 0;
+            box-sizing: border-box;
         }
         .testimonial-card p {
-            font-family: var(--font-heading); font-size: 1.15rem;
+            font-family: var(--font-heading); font-size: 1.1rem;
             font-style: italic; line-height: 1.7; margin-bottom: 20px;
             color: var(--charcoal);
         }
@@ -414,6 +441,13 @@
             letter-spacing: 0.1em;
         }
         .testimonial-author span { color: var(--blue); font-weight: 400; }
+        .carousel-dots { display: flex; justify-content: center; gap: 8px; margin-top: 32px; }
+        .carousel-dot {
+            width: 10px; height: 10px; border-radius: 50%;
+            background: var(--border); border: none; cursor: pointer;
+            transition: background 0.3s; padding: 0;
+        }
+        .carousel-dot.active { background: var(--blue); }
 
         /* ========== FAQ ========== */
         .faq-section { background: var(--white); }
@@ -554,6 +588,7 @@
             .footer-inner { grid-template-columns: 1fr; }
             .trust-items { gap: 24px; }
             .tier-card.featured { transform: none; }
+            .testimonial-card { min-width: calc(100% - 22px); }
         }
     </style>
 </head>
@@ -575,7 +610,7 @@
             <li><a href="#courses">Courses</a></li>
             <li><a href="#faq">FAQ</a></li>
             <li><a href="#contact">Contact</a></li>
-            <li><a href="KatieFlinnDesign_Courses.html">Course Details</a></li>
+            <li><a href="courses.html">Course Details</a></li>
             <li><a href="#contact" class="nav-cta">Enquire</a></li>
         </ul>
         <button class="hamburger" id="hamburger" aria-label="Open menu">
@@ -590,8 +625,8 @@
     <a href="#courses" onclick="closeMobile()">Courses</a>
     <a href="#faq" onclick="closeMobile()">FAQ</a>
     <a href="#contact" onclick="closeMobile()">Contact</a>
-    <a href="KatieFlinnDesign_Courses.html" onclick="closeMobile()">Course Details</a>
-    <a href="KatieFlinnDesign_Reviews.html" onclick="closeMobile()">Reviews</a>
+    <a href="courses.html" onclick="closeMobile()">Course Details</a>
+    <a href="reviews.html" onclick="closeMobile()">Reviews</a>
 </div>
 
 <!-- ===== HERO ===== -->
@@ -710,43 +745,41 @@
             <p class="section-subtitle centered">No bullshit. No fluff. Eight years of experience distilled into courses you can do from home. Lifetime access, learn at your own pace.</p>
         </div>
         <div class="tier-grid">
-            <div class="tier-card">
+            <div class="tier-card explore-card">
                 <p class="tier-name">Tools Modules</p>
-                <p class="tier-price">$60 <small>each</small></p>
                 <p class="tier-desc">Start small — get the essential equipment checklists before committing to a full course.</p>
-                <ul class="tier-features">
-                    <li>Wax tools checklist + guide</li>
-                    <li>Metal tools checklist + guide</li>
-                    <li>Supplier recommendations</li>
-                    <li>Upgrade credit to full course</li>
-                </ul>
-                <a href="https://katieflinn.podia.com/" class="btn btn-tier">Start Here</a>
+                <div class="explore-trigger">
+                    <span class="btn btn-tier">Explore More</span>
+                    <div class="explore-popup">
+                        <h4>Tools Modules</h4>
+                        <p>Individual standalone modules covering wax tools and metal tools. Perfect for getting set up before diving into a full course. Each module gives you a complete equipment checklist with supplier recommendations. Upgrade credit applies if you move to the full course later.</p>
+                        <a href="courses.html" class="popup-link">View Full Course Details →</a>
+                    </div>
+                </div>
             </div>
-            <div class="tier-card featured">
+            <div class="tier-card featured explore-card">
                 <p class="tier-name">Full Course Bundle</p>
-                <p class="tier-price">$1,222 <small>AUD — save $227</small></p>
-                <p class="tier-desc">The complete jewellery-making experience. Both modules, lifetime access.</p>
-                <ul class="tier-features">
-                    <li>Wax Jewellery Making (7h 45min)</li>
-                    <li>Metal Finishing + Stone Setting (5h 50min)</li>
-                    <li>Lost wax casting fundamentals</li>
-                    <li>Claw + bezel stone setting</li>
-                    <li>Polishing, sizing, quality checks</li>
-                    <li>Lifetime access + rewatchable</li>
-                </ul>
-                <a href="https://katieflinn.podia.com/jewellery-course-bundle" class="btn btn-tier">Get the Full Experience</a>
+                <p class="tier-desc">The complete jewellery-making experience. Both modules, lifetime access, and the best value.</p>
+                <div class="explore-trigger">
+                    <span class="btn btn-tier">Explore More</span>
+                    <div class="explore-popup">
+                        <h4>Full Course Bundle</h4>
+                        <p>Includes Wax Jewellery Making (7h 45min) and Metal Finishing + Stone Setting (5h 50min). Covers lost wax casting fundamentals, claw and bezel stone setting, polishing, sizing, and quality checks. Lifetime access, learn at your own pace.</p>
+                        <a href="courses.html" class="popup-link">View Full Course Details →</a>
+                    </div>
+                </div>
             </div>
-            <div class="tier-card">
+            <div class="tier-card explore-card">
                 <p class="tier-name">Individual Courses</p>
-                <p class="tier-price">$599–$850 <small>AUD</small></p>
-                <p class="tier-desc">Pick the module that fits where you're at in your journey.</p>
-                <ul class="tier-features">
-                    <li>Wax Jewellery Making — $850</li>
-                    <li>Metal Finishing + Setting — $599</li>
-                    <li>Step-by-step video lessons</li>
-                    <li>Lifetime access</li>
-                </ul>
-                <a href="KatieFlinnDesign_Courses.html" class="btn btn-tier">View Course Details</a>
+                <p class="tier-desc">Pick the module that fits where you're at in your creative journey.</p>
+                <div class="explore-trigger">
+                    <span class="btn btn-tier">Explore More</span>
+                    <div class="explore-popup">
+                        <h4>Individual Courses</h4>
+                        <p>Choose Wax Jewellery Making or Metal Finishing + Stone Setting individually. Step-by-step video lessons with lifetime access. Perfect if you want to focus on one skill set at a time.</p>
+                        <a href="courses.html" class="popup-link">View Full Course Details →</a>
+                    </div>
+                </div>
             </div>
         </div>
 
@@ -793,8 +826,14 @@
                 <h2 class="section-title" style="color:var(--cream);">Business Mastermind</h2>
                 <p style="color:rgba(250,246,240,0.7); margin-bottom:20px;">3 months of dedicated support alongside other creative entrepreneurs. Monday–Friday messaging, fortnightly group calls, and pre-recorded trainings.</p>
                 <p style="color:rgba(250,246,240,0.7);">My true soul mission is to empower creatives with better mindset and strategy to take their businesses to the next level.</p>
-                <p class="mentoring-price">$1,800 <small>/ $600 per month</small></p>
-                <a href="#contact" class="btn btn-blue" style="margin-top:16px;">Apply Now</a>
+                <div class="explore-trigger" style="margin-top:20px;">
+                    <a href="mastermind.html" class="btn btn-blue">Explore More</a>
+                    <div class="explore-popup" style="background:var(--white);">
+                        <h4>Business Mastermind</h4>
+                        <p>3 months of dedicated support alongside other creative entrepreneurs. Monday-Friday messaging, fortnightly group calls, and pre-recorded trainings covering mindset, strategy, and business systems.</p>
+                        <a href="mastermind.html" class="popup-link">View Full Details →</a>
+                    </div>
+                </div>
             </div>
             <div>
                 <div class="mentoring-pillars">
@@ -823,19 +862,30 @@
             <p class="section-eyebrow">Kind Words</p>
             <h2 class="section-title">What People Say</h2>
         </div>
-        <div class="testimonial-grid" style="margin-top:48px;">
-            <div class="testimonial-card">
-                <p>"Katie Flinn Design — a glimpse into a fantasy world. Her pieces convey a realism which expresses the traditional rustic techniques of jewellery making while embedding her own distinct features."</p>
-                <div class="testimonial-author">The Gem Monarchy <span>— Press Feature</span></div>
+        <div class="testimonial-carousel" id="testimonialCarousel">
+            <div class="carousel-track" id="carouselTrack">
+                <div class="testimonial-card"><p>"Katie's course gave me everything I needed. I went from zero experience to making sellable jewellery within weeks. The step-by-step approach is incredible."</p><div class="testimonial-author">Paris Strada <span>— Course Student</span></div></div>
+                <div class="testimonial-card"><p>"A glimpse into a fantasy world. Her pieces convey a realism which expresses the traditional rustic techniques of jewellery making while embedding her own distinct features."</p><div class="testimonial-author">The Gem Monarchy <span>— Press Feature</span></div></div>
+                <div class="testimonial-card"><p>"Ethereal jewellery handcrafted with love. Katie strives for seamlessness in every single piece — her work is truly one of a kind."</p><div class="testimonial-author">Jewellery World <span>— Press Feature</span></div></div>
+                <div class="testimonial-card"><p>"I'd never touched wax before Katie's course. Now I'm running my own jewellery label and selling pieces I'm genuinely proud of. Life-changing."</p><div class="testimonial-author">Saskia Heyns <span>— @islestudio_</span></div></div>
+                <div class="testimonial-card"><p>"The custom ring Katie made for my proposal was beyond anything I could have imagined. My partner cried. Worth every cent and every week of waiting."</p><div class="testimonial-author">James M. <span>— Custom Client</span></div></div>
+                <div class="testimonial-card"><p>"I bought three pieces from Katie's shop and each one feels like it was made specifically for me. The craftsmanship is on another level."</p><div class="testimonial-author">Megan T. <span>— Shop Customer</span></div></div>
+                <div class="testimonial-card"><p>"Katie's mentoring helped me go from hobbyist to full-time creative. Her no-fluff approach to business strategy is exactly what I needed."</p><div class="testimonial-author">Jordy Todd <span>— @loom__studio</span></div></div>
+                <div class="testimonial-card"><p>"The quality of her lost wax casting is extraordinary. I've collected jewellery for 20 years and Katie's pieces are some of the most special in my collection."</p><div class="testimonial-author">Rebecca L. <span>— Collector</span></div></div>
+                <div class="testimonial-card"><p>"I was nervous about spending on a course but Katie's was the best investment I've made in my creative career. The content is thorough and beautifully produced."</p><div class="testimonial-author">Gemma Hewson <span>— @bygemma.hewson</span></div></div>
+                <div class="testimonial-card"><p>"My engagement ring from Katie is a work of art. She captured the fantasy aesthetic perfectly and the opal is stunning. Gets compliments everywhere."</p><div class="testimonial-author">Sarah K. <span>— Custom Client</span></div></div>
+                <div class="testimonial-card"><p>"What sets Katie apart is her willingness to share everything she knows. The course doesn't hold back — you get eight years of expertise in one package."</p><div class="testimonial-author">Cristy Kantor <span>— @siren_ofthe_sea</span></div></div>
+                <div class="testimonial-card"><p>"I ordered the Moonblade pendant and it arrived even more beautiful than the photos. The attention to detail is remarkable. Will be back for more."</p><div class="testimonial-author">Daniel R. <span>— Shop Customer</span></div></div>
+                <div class="testimonial-card"><p>"Katie's mastermind programme pushed me to launch my brand three months ahead of schedule. The accountability and strategy sessions were invaluable."</p><div class="testimonial-author">Alyssa P. <span>— Mastermind Student</span></div></div>
+                <div class="testimonial-card"><p>"From the initial consultation to the final delivery, Katie made the custom process feel personal and exciting. She really listens to your vision."</p><div class="testimonial-author">Tom and Elise <span>— Custom Clients</span></div></div>
+                <div class="testimonial-card"><p>"I've taken jewellery courses in person and online. Katie's is the only one that actually made me feel confident enough to start selling my work."</p><div class="testimonial-author">Natalie W. <span>— Course Student</span></div></div>
+                <div class="testimonial-card"><p>"The Dragon Eye ring is the most special piece of jewellery I own. People stop me to ask about it constantly. Pure wearable art."</p><div class="testimonial-author">Chris M. <span>— Shop Customer</span></div></div>
+                <div class="testimonial-card"><p>"Katie's business mastermind changed my entire relationship with money and my creative work. I tripled my revenue in the first quarter after finishing."</p><div class="testimonial-author">Lauren S. <span>— Mastermind Graduate</span></div></div>
+                <div class="testimonial-card"><p>"The metal finishing module alone was worth the entire course price. I had no idea how much goes into polishing and setting stones properly."</p><div class="testimonial-author">Josh T. <span>— Course Student</span></div></div>
+                <div class="testimonial-card"><p>"Katie's communication throughout my custom commission was fantastic. Weekly updates, photos of the wax model, and the final piece was perfection."</p><div class="testimonial-author">Amanda and Nick <span>— Custom Clients</span></div></div>
+                <div class="testimonial-card"><p>"I bought the tools module first to test the waters. Within a week I'd upgraded to the full bundle. No regrets — this course is the real deal."</p><div class="testimonial-author">Stephanie R. <span>— Course Student</span></div></div>
             </div>
-            <div class="testimonial-card">
-                <p>"I started thinking about jewellery design when I left my corporate job in sales. Katie's course gave me everything I needed — now I'm building my skills as a jeweller full time."</p>
-                <div class="testimonial-author">Paris Strada <span>— Course Student</span></div>
-            </div>
-            <div class="testimonial-card">
-                <p>"Ethereal jewellery handcrafted with love. Katie strives for seamlessness in every single piece — her work is truly one of a kind."</p>
-                <div class="testimonial-author">Jewellery World <span>— Press Feature</span></div>
-            </div>
+            <div class="carousel-dots" id="carouselDots"></div>
         </div>
     </div>
 </section>
@@ -899,7 +949,7 @@
     <div class="cta-btns">
         <a href="https://www.katieflinndesign.com/shop" class="btn btn-blue">Shop the Collection</a>
         <a href="#contact" class="btn btn-outline">Book a Custom Commission</a>
-        <a href="KatieFlinnDesign_Courses.html" class="btn btn-outline">View Courses</a>
+        <a href="courses.html" class="btn btn-outline">View Courses</a>
     </div>
 </div>
 
@@ -960,7 +1010,7 @@
                 <li><a href="#gallery">Gallery</a></li>
                 <li><a href="#courses">Courses</a></li>
                 <li><a href="#about">About Katie</a></li>
-                <li><a href="KatieFlinnDesign_Reviews.html">Reviews</a></li>
+                <li><a href="reviews.html">Reviews</a></li>
             </ul>
         </div>
         <div>
@@ -1080,6 +1130,59 @@ document.querySelectorAll('section > .container, .trust-bar, .cta-banner').forEa
     el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
     observer.observe(el);
 });
+
+// Active section tracking in nav
+const sections = document.querySelectorAll('section[id]');
+const navLinksAll = document.querySelectorAll('.nav-links a[href^="#"]');
+function updateActiveNav() {
+    let current = '';
+    sections.forEach(function(section) {
+        var sectionTop = section.offsetTop - 100;
+        if (window.scrollY >= sectionTop) current = section.getAttribute('id');
+    });
+    navLinksAll.forEach(function(link) {
+        link.classList.remove('active');
+        if (link.getAttribute('href') === '#' + current) link.classList.add('active');
+    });
+}
+window.addEventListener('scroll', updateActiveNav);
+updateActiveNav();
+
+// Testimonial Carousel
+(function() {
+    var track = document.getElementById('carouselTrack');
+    var dotsContainer = document.getElementById('carouselDots');
+    if (!track || !dotsContainer) return;
+    var cards = track.querySelectorAll('.testimonial-card');
+    var perView = window.innerWidth <= 768 ? 1 : 3;
+    var totalSlides = Math.ceil(cards.length / perView);
+    var current = 0;
+
+    for (var i = 0; i < totalSlides; i++) {
+        var dot = document.createElement('button');
+        dot.className = 'carousel-dot' + (i === 0 ? ' active' : '');
+        dot.setAttribute('aria-label', 'Go to slide ' + (i + 1));
+        (function(idx) {
+            dot.addEventListener('click', function() { goTo(idx); });
+        })(i);
+        dotsContainer.appendChild(dot);
+    }
+
+    function goTo(index) {
+        current = index;
+        var cardWidth = cards[0].offsetWidth + 22;
+        track.style.transform = 'translateX(-' + (current * perView * cardWidth) + 'px)';
+        var dots = dotsContainer.querySelectorAll('.carousel-dot');
+        for (var j = 0; j < dots.length; j++) {
+            dots[j].classList.toggle('active', j === current);
+        }
+    }
+
+    setInterval(function() {
+        current = (current + 1) % totalSlides;
+        goTo(current);
+    }, 5000);
+})();
 </script>
 
 </body>
