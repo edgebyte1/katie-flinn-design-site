@@ -1,0 +1,685 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Brand Brief & SEO Architecture | Katie Flinn Design</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'DM Sans',sans-serif;color:#3A3A3A;background:#FAF6F0;line-height:1.7;padding:40px 24px}
+.container{max-width:900px;margin:0 auto}
+h1{font-family:'Cormorant Garamond',serif;font-size:2.4rem;font-weight:300;color:#0D1B2A;margin:0 0 8px;line-height:1.2}
+h2{font-family:'Cormorant Garamond',serif;font-size:1.8rem;font-weight:400;color:#0D1B2A;margin:48px 0 16px;padding-bottom:8px;border-bottom:2px solid #C9A96E}
+h3{font-family:'Cormorant Garamond',serif;font-size:1.3rem;font-weight:500;color:#1B2838;margin:28px 0 12px}
+h4{font-size:1rem;font-weight:600;color:#2C2C2C;margin:20px 0 8px}
+p{margin-bottom:12px}
+strong{color:#0D1B2A}
+a{color:#C9A96E}
+code{background:#F0EBE3;padding:2px 6px;border-radius:3px;font-size:0.9em}
+pre{background:#0D1B2A;color:#FAF6F0;padding:20px;border-radius:4px;overflow-x:auto;margin:16px 0;font-size:0.85rem}
+pre code{background:none;color:inherit;padding:0}
+table{width:100%;border-collapse:collapse;margin:16px 0;font-size:0.9rem}
+th{background:#0D1B2A;color:#FAF6F0;text-align:left;padding:10px 14px;font-weight:600;font-size:0.8rem;letter-spacing:0.05em;text-transform:uppercase}
+td{padding:10px 14px;border-bottom:1px solid #F0EBE3}
+tr:nth-child(even){background:#F0EBE3}
+ul,ol{margin:8px 0 16px 24px}
+li{margin-bottom:6px}
+blockquote{border-left:3px solid #C9A96E;padding:12px 20px;margin:16px 0;background:#fff;font-style:italic;color:#6B6B6B}
+hr{border:none;border-top:1px solid #C9A96E;margin:40px 0;opacity:0.3}
+.header-bar{background:#0D1B2A;color:#FAF6F0;padding:32px;margin:-40px -24px 40px;text-align:center}
+.header-bar h1{color:#FAF6F0}
+.header-bar p{color:rgba(250,246,240,0.6);font-size:0.9rem;margin:8px 0 0}
+.status-badge{display:inline-block;background:#C9A96E;color:#0D1B2A;padding:6px 18px;font-size:0.75rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;margin-top:16px}
+input[type=checkbox]{margin-right:8px}
+@media(max-width:600px){body{padding:20px 16px} h1{font-size:1.8rem} h2{font-size:1.4rem} table{font-size:0.8rem} th,td{padding:8px}}
+</style>
+</head>
+<body>
+<div class="header-bar">
+<h1>Katie Flinn Design</h1>
+<p>Brand Brief & SEO Architecture — Prepared by Hybrid Real Estate Web Services</p>
+<p>2 April 2026</p>
+<div class="status-badge">Awaiting Client Sign-Off</div>
+</div>
+<div class="container">
+<h1>Katie Flinn Design — Brand Brief &amp; SEO Architecture</h1>
+<p><strong>Prepared by:</strong> Hybrid Real Estate Web Services
+<strong>Date:</strong> 2 April 2026
+<strong>Status:</strong> AWAITING CLIENT SIGN-OFF — do not build until approved</p>
+<hr />
+<h2>1. BUSINESS OVERVIEW</h2>
+<p><strong>Business Name:</strong> Katie Flinn Design
+<strong>Owner:</strong> Katie Flinn
+<strong>Location:</strong> PO Box 1141, Elsternwick VIC 3185 (previously New Brighton, NSW 2483)
+<strong>Email:</strong> hello@katieflinndesign.com
+<strong>Instagram:</strong> @katieflinndesign (~41K followers)
+<strong>Facebook:</strong> facebook.com/katieflinndesign</p>
+<p><strong>What she does:</strong> Katie is a self-taught jewellery maker specialising in lost wax cast, sculptural fine jewellery using sterling silver, solid gold, Australian opals, sapphires, and diamonds. She handcrafts every piece from start to finish — currently from her van while travelling Australia full-time.</p>
+<p><strong>Revenue streams (4 pillars):</strong></p>
+<ol>
+<li><strong>Ready-made jewellery</strong> — Rings, pendants, daggers. Price range $190–$2,295 AUD (shop)</li>
+<li><strong>Custom commissions</strong> — Artist-led bespoke pieces starting at $2,500, most clients $4,000–$7,000. 12-week lead time</li>
+<li><strong>Online courses</strong> — Two modules on Podia: Wax Jewellery Making ($850) + Metal Finishing &amp; Stone Setting ($599), or bundled at $1,222. Plus standalone tools modules at $60 each</li>
+<li><strong>Business mentoring</strong> — 3-month Mastermind program at $1,800 ($600/month) for creative entrepreneurs</li>
+</ol>
+<p><strong>Current status note:</strong> Katie is "taking a step back from the usual hustle to focus on creating in a slower, more thoughtful way" — the site needs to reflect this intentional, unhurried energy while still driving conversions.</p>
+<hr />
+<h2>2. TECH STACK SNAPSHOT (CURRENT SITE)</h2>
+<table>
+<thead>
+<tr>
+<th>Element</th>
+<th>Current</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Platform</strong></td>
+<td>Squarespace 7.1 (commerce-enabled)</td>
+</tr>
+<tr>
+<td><strong>Course hosting</strong></td>
+<td>Podia (katieflinn.podia.com) — lifetime access model</td>
+</tr>
+<tr>
+<td><strong>Domain</strong></td>
+<td>katieflinndesign.com</td>
+</tr>
+<tr>
+<td><strong>Analytics</strong></td>
+<td>Google Analytics 4 (G-2ZBPVC88BX)</td>
+</tr>
+<tr>
+<td><strong>Tag Manager</strong></td>
+<td>GTM-N7GPFWH</td>
+</tr>
+<tr>
+<td><strong>Facebook Pixel</strong></td>
+<td>327540794544886</td>
+</tr>
+<tr>
+<td><strong>Heatmapping</strong></td>
+<td>Hotjar (hjid: 3401663)</td>
+</tr>
+<tr>
+<td><strong>reCAPTCHA</strong></td>
+<td>Standard + Enterprise keys</td>
+</tr>
+<tr>
+<td><strong>SSL</strong></td>
+<td>Active (via Squarespace)</td>
+</tr>
+<tr>
+<td><strong>Payment</strong></td>
+<td>Squarespace Commerce (AUD, AU shipping default)</td>
+</tr>
+<tr>
+<td><strong>Email/Newsletter</strong></td>
+<td>/sub page (likely Squarespace email campaigns or Mailchimp)</td>
+</tr>
+<tr>
+<td><strong>Schema markup</strong></td>
+<td>WebSite, Organization, LocalBusiness — all present</td>
+</tr>
+<tr>
+<td><strong>Booking/forms</strong></td>
+<td>Custom enquiry form on /custom-made-jewellery (native Squarespace form)</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Key issues identified:</strong>
+- Outdated announcement bar still referencing "December 20th 2021" shipping
+- No meta descriptions on most pages
+- Two different postal addresses across pages (NSW vs VIC)
+- No sitemap reference visible
+- Course platform is entirely external (Podia) — no native course pages on the site
+- No booking/calendar integration for calls
+- No review collection system
+- Font stack defaults to Squarespace system fonts (no custom typography)</p>
+<hr />
+<h2>3. BRAND EXTRACTION</h2>
+<h3>Logo</h3>
+<p>Two logo assets identified:
+- <strong>Primary wordmark:</strong> KFD BLUE V3.png — "Katie Flinn Design" blue text logo
+- <strong>Icon/monogram:</strong> KFD EYE.png — mystical eye symbol used in footer</p>
+<h3>Colour Palette</h3>
+<table>
+<thead>
+<tr>
+<th>Role</th>
+<th>Colour</th>
+<th>Approximate Hex</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Primary brand</strong></td>
+<td>Soft blue</td>
+<td>~#6FB3E5</td>
+<td>Used in logo, highlight elements, link colour</td>
+</tr>
+<tr>
+<td><strong>Background</strong></td>
+<td>Off-white / cream</td>
+<td>~#FAF9F6</td>
+<td>Squarespace default, clean gallery feel</td>
+</tr>
+<tr>
+<td><strong>Text</strong></td>
+<td>Dark charcoal</td>
+<td>~#333333</td>
+<td>Body text</td>
+</tr>
+<tr>
+<td><strong>Accent</strong></td>
+<td>Gold / warm metallic</td>
+<td>—</td>
+<td>Implied by jewellery imagery; not explicit in CSS</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Recommendation:</strong> The current palette is minimal — mostly blue logo on white with dark text. For the redesign, I'd suggest introducing a richer palette that matches her jewellery aesthetic: deep navy/midnight, warm gold accent, soft cream, and keeping the blue as a signature accent. This needs Katie's input.</p>
+<h3>Typography</h3>
+<ul>
+<li>Current: Squarespace system defaults (no Typekit ID set, no Google Fonts detected)</li>
+<li><strong>Recommendation:</strong> A serif/display heading font to convey artisan luxury + a clean sans-serif body. Candidates: Playfair Display / Cormorant Garamond for headings, Inter / DM Sans for body.</li>
+</ul>
+<h3>Brand Voice</h3>
+<p>Extracted from all site copy, About page, course pages, and social bio:</p>
+<table>
+<thead>
+<tr>
+<th>Trait</th>
+<th>Evidence</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Direct &amp; unfiltered</strong></td>
+<td>"No bullshit. No fluff." (course page)</td>
+</tr>
+<tr>
+<td><strong>Casual &amp; personal</strong></td>
+<td>"Hey! I'm Katie" — first-name, first-person throughout</td>
+</tr>
+<tr>
+<td><strong>Confident &amp; passionate</strong></td>
+<td>"I absolutely love business, personal growth, creativity"</td>
+</tr>
+<tr>
+<td><strong>Fantasy/mystical</strong></td>
+<td>Product names: Frostmourne, Dragon Eye, Shadowmoon, Astral Moonblade, Duskfall Realm</td>
+</tr>
+<tr>
+<td><strong>Artist-first</strong></td>
+<td>"It's about sharing your vision and letting me bring it to life in my own artistic way"</td>
+</tr>
+<tr>
+<td><strong>Empowering</strong></td>
+<td>"My true soul mission on this earth is to empower creatives"</td>
+</tr>
+<tr>
+<td><strong>Australian but global</strong></td>
+<td>Ships worldwide, travels Australia, learned in India</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Voice summary:</strong> Warm, direct, mystical, empowering. She talks like a friend who happens to be an incredibly skilled artisan. No corporate polish — raw authenticity with confidence. Fantasy-world naming convention is a signature differentiator.</p>
+<h3>Imagery Style</h3>
+<ul>
+<li>High-quality macro product photography (rings on hands, detail shots of stone settings)</li>
+<li>Natural/organic backgrounds (earth, sand, stone, fabric)</li>
+<li>Warm, moody lighting — not clinical studio white</li>
+<li>Van life / travel / workshop behind-the-scenes on socials</li>
+<li>Student work showcases for course marketing</li>
+</ul>
+<h3>Brand Values (from Sustainability page)</h3>
+<ul>
+<li>Recycled metals exclusively</li>
+<li>Australian opals sourced direct from miners</li>
+<li>Sustainable FSC-certified packaging</li>
+<li>Monthly "Pay The Rent" contributions to Indigenous communities</li>
+<li>Banks with B-Corp certified Bank Australia (no fossil fuels, gambling, arms)</li>
+</ul>
+<hr />
+<h2>4. SOCIAL MEDIA INTEL</h2>
+<h3>Instagram (@katieflinndesign)</h3>
+<ul>
+<li><strong>Followers:</strong> ~41K</li>
+<li><strong>Bio name:</strong> "KATIE FKN FLINN" (with fire heart emoji)</li>
+<li><strong>Content themes:</strong> Product showcases, wax carving process, course promotion, van life updates, gemstone sourcing, student success stories, business mentoring</li>
+<li><strong>Visual style:</strong> Moody, warm, close-up macro jewellery shots — consistent with site imagery</li>
+<li><strong>Engagement driver:</strong> Behind-the-scenes process content and student transformations</li>
+</ul>
+<h3>Facebook</h3>
+<ul>
+<li>Page exists but minimal activity (2 reviews, not yet rated)</li>
+<li>Not a primary channel</li>
+</ul>
+<h3>Press/Features</h3>
+<ul>
+<li>Featured in The Gem Monarchy: "A Glimpse Into A Fantasy World"</li>
+<li>Featured in Jewellery World: "Ethereal jewellery handcrafted with love"</li>
+<li>Listed in "25 Australian Jewellers to Follow on Instagram" (QReport)</li>
+</ul>
+<hr />
+<h2>5. EXISTING CONTENT INVENTORY</h2>
+<h3>Pages on current site:</h3>
+<table>
+<thead>
+<tr>
+<th>Page</th>
+<th>URL</th>
+<th>Status</th>
+<th>Content Quality</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Home</td>
+<td>/</td>
+<td>Live</td>
+<td>Minimal — just intro + 3 section links</td>
+</tr>
+<tr>
+<td>About</td>
+<td>/about</td>
+<td>Live</td>
+<td>Strong — full origin story, milestones, philosophy</td>
+</tr>
+<tr>
+<td>Custom Jewellery</td>
+<td>/custom-made-jewellery</td>
+<td>Live</td>
+<td>Excellent — detailed FAQ, pricing, full enquiry form</td>
+</tr>
+<tr>
+<td>Course Landing</td>
+<td>/jewellery-making-course</td>
+<td>Live</td>
+<td>Good — modules, pricing, student testimonials</td>
+</tr>
+<tr>
+<td>Course Links</td>
+<td>/courselinks</td>
+<td>Live</td>
+<td>Detailed — full curriculum breakdown, AfterPay links</td>
+</tr>
+<tr>
+<td>Shop</td>
+<td>/shop</td>
+<td>Live</td>
+<td>21 products listed, good imagery</td>
+</tr>
+<tr>
+<td>Sold Gallery</td>
+<td>/sold-gallery</td>
+<td>Live</td>
+<td>29+ past pieces with multiple images each — strong portfolio</td>
+</tr>
+<tr>
+<td>Contact</td>
+<td>/contact</td>
+<td>Live</td>
+<td>Basic — simple form, email, address</td>
+</tr>
+<tr>
+<td>Sustainability</td>
+<td>/Sustainability</td>
+<td>Live</td>
+<td>Good — ethical sourcing, packaging, banking</td>
+</tr>
+<tr>
+<td>FAQ</td>
+<td>/faq</td>
+<td>Live</td>
+<td>10 questions covering process, materials, care</td>
+</tr>
+<tr>
+<td>Mastermind</td>
+<td>/mastermind</td>
+<td>Live</td>
+<td>Business mentoring offering — $1,800</td>
+</tr>
+<tr>
+<td>T&amp;Cs</td>
+<td>/termsandconditions</td>
+<td>Live</td>
+<td>Standard</td>
+</tr>
+<tr>
+<td>Newsletter</td>
+<td>/sub</td>
+<td>Live</td>
+<td>Email signup</td>
+</tr>
+</tbody>
+</table>
+<h3>Testimonials available:</h3>
+<ul>
+<li>5 student showcases on course page (Saskia Heyns, Jordy Todd, Gemma Hewson, Cristy Kantor, Paris Strada)</li>
+<li>Press quotes from The Gem Monarchy and Jewellery World</li>
+<li>No formal customer review system in place</li>
+</ul>
+<hr />
+<h2>6. SEO ARCHITECTURE — PROPOSED SITE STRUCTURE</h2>
+<h3>Version 1: Single-Flow Redesign (One-Page with Anchored Sections)</h3>
+<pre><code>katieflinndesign.com/
+│
+├── #hero          → &quot;Otherworldly Jewellery, Handcrafted with Soul&quot;
+├── #about         → Katie's story (condensed) + sustainability callout
+├── #jewellery     → Shop preview + custom commissions CTA
+├── #gallery       → Portfolio carousel (sold pieces + current)
+├── #courses       → Tiered course cards + student success
+├── #mentoring     → Mastermind program overview
+├── #testimonials  → Student + customer quotes
+├── #faq           → Expanded FAQ (12+ questions, schema-marked)
+├── #contact       → Contact form + book a call CTA
+└── #footer        → Social links, email, legal
+│
+├── /courses       → SEPARATE PAGE: Tiered course breakdown (new)
+├── /reviews       → SEPARATE PAGE: Review funnel (new — our skill)
+└── /book          → SEPARATE PAGE: Book a call (Calendly/Cal.com embed)
+</code></pre>
+<h3>Version 2: Multi-Page Replica (Same Structure as Current, Redesigned)</h3>
+<pre><code>katieflinndesign.com/
+│
+├── /              → Homepage (redesigned hero, sections, CTAs)
+├── /about         → Full about page (story, values, sustainability merged)
+├── /custom-jewellery → Custom commissions (form, FAQ, pricing, process)
+├── /shop          → Product catalogue (Squarespace commerce or static showcase)
+├── /sold-gallery  → Portfolio of past work
+├── /courses       → NEW: Tiered course page with curriculum detail
+├── /course-links  → Redirect to /courses (consolidate)
+├── /mastermind    → Business mentoring
+├── /faq           → Expanded FAQ
+├── /sustainability → Ethical practices (or merge into /about)
+├── /contact       → Contact form + book a call
+├── /reviews       → Review funnel page (new — our skill)
+├── /book          → Book a call page (new)
+└── /terms         → T&amp;Cs
+</code></pre>
+<h3>Target Keywords by Page</h3>
+<table>
+<thead>
+<tr>
+<th>Page/Section</th>
+<th>Primary Keyword</th>
+<th>Secondary Keywords</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Homepage</td>
+<td>handcrafted jewellery australia</td>
+<td>artisan jewellery, lost wax cast jewellery, australian jeweller</td>
+</tr>
+<tr>
+<td>About</td>
+<td>katie flinn jewellery designer</td>
+<td>australian jewellery maker, handmade jewellery artist</td>
+</tr>
+<tr>
+<td>Custom</td>
+<td>custom jewellery australia</td>
+<td>bespoke engagement ring, custom opal ring, commission jewellery</td>
+</tr>
+<tr>
+<td>Shop</td>
+<td>buy handmade jewellery online</td>
+<td>opal ring australia, sterling silver ring handmade, gold jewellery handcrafted</td>
+</tr>
+<tr>
+<td>Gallery</td>
+<td>handcrafted opal rings gallery</td>
+<td>custom engagement ring gallery, artisan jewellery portfolio</td>
+</tr>
+<tr>
+<td>Courses</td>
+<td>jewellery making course online</td>
+<td>learn jewellery making, lost wax casting course, wax carving course</td>
+</tr>
+<tr>
+<td>Mentoring</td>
+<td>creative business mentoring</td>
+<td>jewellery business course, small business coaching creatives</td>
+</tr>
+<tr>
+<td>FAQ</td>
+<td>jewellery making FAQ</td>
+<td>how to start making jewellery, lost wax casting explained</td>
+</tr>
+<tr>
+<td>Reviews</td>
+<td>katie flinn design reviews</td>
+<td>customer reviews handmade jewellery</td>
+</tr>
+</tbody>
+</table>
+<h3>On-Page SEO Spec</h3>
+<p>Every page will include:
+- Unique <code>&lt;title&gt;</code> tag: <code>Primary Keyword | Katie Flinn Design</code>
+- Unique <code>&lt;meta description&gt;</code> (150-160 chars with CTA)
+- Single <code>&lt;h1&gt;</code> with target keyword
+- Logical H2/H3 hierarchy
+- Image <code>alt</code> attributes on every image
+- Internal linking between sections
+- LocalBusiness schema markup
+- FAQ schema on FAQ section
+- Open Graph tags for social sharing
+- Canonical tags
+- Structured data for Products (shop) and Courses (course page)</p>
+<hr />
+<h2>7. PROPOSED COURSE PAGE STRUCTURE (NEW — TIERED)</h2>
+<p>This is a new dedicated page replacing the scattered course info across /jewellery-making-course and /courselinks.</p>
+<pre><code>/courses
+
+├── Hero: &quot;Learn to Make High-End Jewellery&quot;
+│
+├── Tier 1: TOOLS MODULES ($60 each)
+│   ├── Wax Tools Module
+│   └── Metal Tools Module
+│   └── CTA: &quot;Start Here — Get the Checklists&quot;
+│
+├── Tier 2: INDIVIDUAL COURSES
+│   ├── Wax Jewellery Making — $850 (7h 45min, lifetime access)
+│   └── Metal Finishing + Stone Setting — $599 (5h 50min, lifetime access)
+│   └── CTA: &quot;Enrol Now&quot; / AfterPay option
+│
+├── Tier 3: FULL BUNDLE — $1,222 (save $227)
+│   └── CTA: &quot;Get the Full Experience&quot;
+│
+├── Student Showcase (5 students with before/after + Instagram links)
+├── Curriculum Breakdown (accordion — what's covered in each module)
+├── FAQ Section (4+ course-specific questions)
+└── CTA: &quot;Still not sure? Book a free intro call&quot;
+</code></pre>
+<hr />
+<h2>8. FEATURE &amp; INTEGRATION MAP</h2>
+<h3>Core Features (both versions)</h3>
+<ul>
+<li>[x] Mobile-first responsive design</li>
+<li>[x] Clear primary CTA above the fold ("Shop" / "Book a Custom Piece" / "Learn Jewellery Making")</li>
+<li>[x] Contact form with email delivery</li>
+<li>[x] Click-to-email on mobile</li>
+<li>[x] Social media links (Instagram, Facebook)</li>
+<li>[x] Google Analytics 4 tag</li>
+<li>[x] Facebook Pixel</li>
+<li>[x] Cookie consent notice</li>
+<li>[x] FAQ with schema markup</li>
+<li>[x] LocalBusiness + Organization schema</li>
+<li>[x] Open Graph tags</li>
+</ul>
+<h3>New Features to Add</h3>
+<ul>
+<li>[ ] <strong>Book a Call</strong> — Calendly or Cal.com embed (replacing lack of booking)</li>
+<li>[ ] <strong>Review funnel page</strong> — Our standard review-page skill (star rating → Google Reviews or private feedback → Notion via Make.com)</li>
+<li>[ ] <strong>Tiered course page</strong> — Dedicated page with pricing tiers and curriculum</li>
+<li>[ ] <strong>Upgraded custom enquiry form</strong> — Current form is good but can be streamlined with better UX</li>
+<li>[ ] <strong>Instagram feed embed</strong> — Pull recent posts for social proof</li>
+<li>[ ] <strong>Portfolio/gallery lightbox</strong> — For sold gallery and shop</li>
+<li>[ ] <strong>Newsletter signup</strong> — Prominent placement with lead magnet</li>
+<li>[ ] <strong>Student showcase carousel</strong> — Course social proof</li>
+</ul>
+<h3>Existing Integrations to Preserve</h3>
+<table>
+<thead>
+<tr>
+<th>Integration</th>
+<th>Status</th>
+<th>Action</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>GA4 (G-2ZBPVC88BX)</td>
+<td>Active</td>
+<td>Carry over tag</td>
+</tr>
+<tr>
+<td>GTM (GTM-N7GPFWH)</td>
+<td>Active</td>
+<td>Carry over tag</td>
+</tr>
+<tr>
+<td>Facebook Pixel (327540794544886)</td>
+<td>Active</td>
+<td>Carry over tag</td>
+</tr>
+<tr>
+<td>Hotjar (3401663)</td>
+<td>Active</td>
+<td>Carry over tag</td>
+</tr>
+<tr>
+<td>Podia (course platform)</td>
+<td>Active</td>
+<td>Link to external — or embed if possible</td>
+</tr>
+<tr>
+<td>Squarespace Commerce</td>
+<td>Active</td>
+<td>Decide: keep Squarespace for shop, or static showcase?</td>
+</tr>
+</tbody>
+</table>
+<h3>New Integrations Recommended</h3>
+<table>
+<thead>
+<tr>
+<th>Integration</th>
+<th>Purpose</th>
+<th>Priority</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Calendly / Cal.com</td>
+<td>Book a discovery call for custom commissions</td>
+<td>High</td>
+</tr>
+<tr>
+<td>Make.com + Notion</td>
+<td>Review funnel backend</td>
+<td>High (part of review page skill)</td>
+</tr>
+<tr>
+<td>Google Search Console</td>
+<td>Monitor search performance</td>
+<td>High</td>
+</tr>
+<tr>
+<td>Mailchimp / ConvertKit</td>
+<td>Email marketing (if not already in use)</td>
+<td>Medium</td>
+</tr>
+<tr>
+<td>Google Business Profile</td>
+<td>Local SEO + reviews</td>
+<td>Medium</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>9. FAQ CONTENT PLAN (EXPANDED — 14 QUESTIONS)</h2>
+<p>Merging existing FAQs from multiple pages + new questions based on search intent:</p>
+<ol>
+<li>What metals does Katie Flinn Design work with?</li>
+<li>Where are the gemstones sourced from?</li>
+<li>How does lost wax casting work?</li>
+<li>How long does a custom piece take?</li>
+<li>What is the minimum budget for a custom commission?</li>
+<li>Can I provide my own gemstones?</li>
+<li>What kinds of pieces does Katie NOT make?</li>
+<li>Do you ship internationally?</li>
+<li>Why has my skin gone black/green after wearing my jewellery?</li>
+<li>How do I care for my opal jewellery?</li>
+<li>What's included in the jewellery making courses?</li>
+<li>Do I need prior experience to take the course?</li>
+<li>How much will I need to invest in tools?</li>
+<li>What if I'm not ready for a full course — can I start small?</li>
+</ol>
+<p>All 14 will be marked up with FAQ schema for Google featured snippet eligibility.</p>
+<hr />
+<h2>10. DELIVERABLES SUMMARY</h2>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Deliverable</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td><strong>Version 1 — Single-Flow Redesign</strong></td>
+<td>One-page site with anchored sections, upgraded content, modern design, all CTAs, SEO-optimised</td>
+</tr>
+<tr>
+<td>2</td>
+<td><strong>Version 2 — Multi-Page Replica</strong></td>
+<td>Same page structure as current site but fully redesigned with new visual treatment</td>
+</tr>
+<tr>
+<td>3</td>
+<td><strong>Tiered Course Page</strong></td>
+<td>Standalone /courses page with pricing tiers, curriculum, student showcases</td>
+</tr>
+<tr>
+<td>4</td>
+<td><strong>Review Funnel Page</strong></td>
+<td>Star-rating → Google Reviews redirect or private feedback capture (our standard skill)</td>
+</tr>
+<tr>
+<td>5</td>
+<td><strong>Book a Call Page</strong></td>
+<td>Calendly/Cal.com embed for custom commission enquiries</td>
+</tr>
+<tr>
+<td>6</td>
+<td><strong>Build Report</strong></td>
+<td>Full handover document with SEO spec, integration notes, recommendations</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>11. OPEN QUESTIONS FOR SIGN-OFF</h2>
+<p>Before building, I need your call on these:</p>
+<ol>
+<li><strong>Colour palette direction</strong> — Keep the existing blue-on-white minimal look, or go richer (navy/gold/cream) to match the jewellery aesthetic?</li>
+<li><strong>Shop functionality</strong> — Static product showcase (images + "enquire" CTA), or do we need actual e-commerce checkout? Current site uses Squarespace Commerce.</li>
+<li><strong>Course hosting</strong> — Keep Podia as the external platform and just link to it, or build a more integrated course landing experience?</li>
+<li><strong>Booking tool</strong> — Calendly, Cal.com, or something else for "Book a Call"?</li>
+<li><strong>Mastermind page</strong> — Include in both versions or just V2 (multi-page)?</li>
+<li><strong>Google Review link</strong> — Do we have Katie's Google Business Profile URL for the review funnel?</li>
+<li><strong>Newsletter platform</strong> — What's she currently using? Mailchimp, ConvertKit, Squarespace email?</li>
+<li><strong>Domain/hosting</strong> — Is the plan to deploy on Cloudflare Pages (our standard), or does she want to stay on Squarespace?</li>
+</ol>
+<hr />
+<p><em>Ready for sign-off. No code will be written until these decisions are locked in.</em></p>
+</div>
+</body>
+</html>

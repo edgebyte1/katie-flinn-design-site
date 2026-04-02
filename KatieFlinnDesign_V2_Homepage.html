@@ -1,0 +1,943 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Katie Flinn Design - Otherworldly Handcrafted Jewellery</title>
+    <meta name="description" content="Otherworldly fine jewellery handcrafted through lost wax casting. Sterling silver, solid gold, Australian opals. Online courses and custom commissions available.">
+    <meta name="keywords" content="handcrafted jewellery, lost wax casting, fine jewellery, sterling silver, Australian opals, jewellery courses">
+    <meta name="author" content="Katie Flinn Design">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.katieflinndesign.com/">
+    <meta property="og:title" content="Katie Flinn Design - Otherworldly Handcrafted Jewellery">
+    <meta property="og:description" content="Otherworldly fine jewellery handcrafted through lost wax casting. Sterling silver, solid gold, Australian opals.">
+    <meta property="og:image" content="https://www.katieflinndesign.com/images/og-image.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Katie Flinn Design - Otherworldly Handcrafted Jewellery">
+    <meta name="twitter:description" content="Fine jewellery handcrafted through lost wax casting. Sterling silver, solid gold, Australian opals.">
+    <meta name="twitter:image" content="https://www.katieflinndesign.com/images/og-image.jpg">
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- GA4 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-ABC123XYZ"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-ABC123XYZ');
+    </script>
+
+    <!-- GTM -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-N7GPFWH');</script>
+
+    <!-- Facebook Pixel -->
+    <script>
+        !function(f,b,e,v,n,t,s)
+        {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+        n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+        if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+        n.queue=[];t=b.createElement(e);t.async=!0;
+        t.src=v;s=b.getElementsByTagName(e)[0];
+        s.parentNode.insertBefore(t,s)}(window, document,'script',
+        'https://connect.facebook.net/en_US/fbevents.js');
+        fbq('init', '1234567890');
+        fbq('track', 'PageView');
+    </script>
+    <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1234567890&ev=PageView&noscript=1" /></noscript>
+
+    <!-- Schema Markup -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "LocalBusiness",
+        "name": "Katie Flinn Design",
+        "image": "https://www.katieflinndesign.com/images/logo/KFD_BLUE_V3.png",
+        "description": "Otherworldly fine jewellery handcrafted through lost wax casting",
+        "url": "https://www.katieflinndesign.com",
+        "telephone": "+61-YOUR-PHONE",
+        "email": "hello@katieflinndesign.com",
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "PO Box 1141",
+            "addressLocality": "Elsternwick",
+            "addressRegion": "VIC",
+            "postalCode": "3185",
+            "addressCountry": "AU"
+        },
+        "sameAs": [
+            "https://instagram.com/katieflinndesign",
+            "https://www.facebook.com/katieflinndesign/"
+        ]
+    }
+    </script>
+
+    <style>
+        /* ========== CSS VARIABLES ========== */
+        :root {
+            --navy: #0D1B2A;
+            --deep-blue: #1B2838;
+            --midnight: #162230;
+            --gold: #C9A96E;
+            --gold-light: #D4BA85;
+            --cream: #FAF6F0;
+            --cream-dark: #F0EBE3;
+            --white: #FFFFFF;
+            --charcoal: #2C2C2C;
+            --text: #3A3A3A;
+            --text-light: #6B6B6B;
+            --blue-accent: #6FB3E5;
+            --border: rgba(201,169,110,0.2);
+            --font-heading: 'Cormorant Garamond', Georgia, serif;
+            --font-body: 'DM Sans', -apple-system, sans-serif;
+            --section-pad: clamp(60px, 8vw, 120px);
+        }
+
+        /* ========== RESET & BASE ========== */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body {
+            font-family: var(--font-body);
+            color: var(--text);
+            background: var(--white);
+            line-height: 1.6;
+        }
+        a { text-decoration: none; color: inherit; }
+        img { max-width: 100%; display: block; }
+        button { font-family: inherit; cursor: pointer; border: none; }
+
+        /* ========== TYPOGRAPHY ========== */
+        h1, h2, h3, h4, h5, h6 { font-family: var(--font-heading); font-weight: 400; }
+        h1 { font-size: clamp(2.5rem, 6vw, 4rem); line-height: 1.1; }
+        h2 { font-size: clamp(2rem, 5vw, 3.5rem); line-height: 1.1; }
+        h3 { font-size: 1.5rem; font-weight: 400; }
+        h4 { font-size: 1.1rem; font-weight: 500; }
+        .section-eyebrow {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            color: var(--gold);
+            margin-bottom: 12px;
+            font-weight: 600;
+        }
+        .section-title { margin-bottom: 16px; color: var(--navy); }
+        .section-subtitle { color: var(--text-light); font-size: clamp(1rem, 2vw, 1.1rem); }
+
+        /* ========== UTILITIES ========== */
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+        .text-center { text-align: center; }
+        .centered { margin-left: auto; margin-right: auto; }
+
+        /* ========== BUTTONS ========== */
+        .btn {
+            display: inline-block;
+            padding: 14px 32px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            font-size: 0.75rem;
+            border-radius: 2px;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+        .btn-gold {
+            background: var(--gold);
+            color: var(--navy);
+        }
+        .btn-gold:hover {
+            background: var(--gold-light);
+            transform: translateY(-2px);
+        }
+        .btn-outline {
+            background: transparent;
+            color: var(--navy);
+            border: 1px solid var(--navy);
+        }
+        .btn-outline:hover {
+            background: var(--navy);
+            color: var(--cream);
+        }
+
+        /* ========== NAVIGATION ========== */
+        .nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border);
+            padding: 16px 0;
+        }
+        .nav.scrolled {
+            background: rgba(255, 255, 255, 0.98);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        }
+        .nav-inner {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 24px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .nav-logo img { height: 32px; width: auto; }
+        .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 32px;
+            align-items: center;
+        }
+        .nav-links a {
+            font-size: 0.9rem;
+            font-weight: 500;
+            color: var(--text);
+            transition: color 0.3s;
+        }
+        .nav-links a:hover { color: var(--gold); }
+        .nav-cta {
+            background: var(--gold);
+            color: var(--navy);
+            padding: 10px 24px;
+            border-radius: 2px;
+            font-weight: 600;
+        }
+        .nav-cta:hover { background: var(--gold-light); }
+
+        /* Mobile menu */
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            gap: 6px;
+            background: none;
+            z-index: 1001;
+        }
+        .hamburger span {
+            width: 24px;
+            height: 2px;
+            background: var(--navy);
+            transition: all 0.3s;
+        }
+        .hamburger.active span:nth-child(1) {
+            transform: rotate(45deg) translate(8px, 8px);
+        }
+        .hamburger.active span:nth-child(2) {
+            opacity: 0;
+        }
+        .hamburger.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(7px, -6px);
+        }
+        .mobile-menu {
+            display: none;
+            position: fixed;
+            top: 70px;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: var(--white);
+            flex-direction: column;
+            padding: 24px;
+            gap: 16px;
+            z-index: 999;
+        }
+        .mobile-menu.active { display: flex; }
+        .mobile-menu a {
+            padding: 12px;
+            color: var(--text);
+            font-weight: 500;
+            font-size: 1rem;
+        }
+
+        /* ========== HERO ========== */
+        .hero {
+            position: relative;
+            height: clamp(500px, 100vh, 700px);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 70px;
+            overflow: hidden;
+        }
+        .hero-bg {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, #1B2838 0%, #0D1B2A 50%, #162230 100%);
+            z-index: -2;
+        }
+        .hero-overlay {
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(circle at 60% 40%, rgba(107,179,229,0.08), transparent 60%);
+            z-index: -1;
+        }
+        .hero-content {
+            text-align: center;
+            color: var(--cream);
+            max-width: 700px;
+            padding: 40px 24px;
+            position: relative;
+            z-index: 1;
+        }
+        .hero-eyebrow {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            color: var(--blue-accent);
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+        .hero-content h1 {
+            color: var(--cream);
+            margin-bottom: 20px;
+        }
+        .hero-content em {
+            font-style: italic;
+            color: var(--gold-light);
+        }
+        .hero-sub {
+            font-size: clamp(0.95rem, 2vw, 1.1rem);
+            color: rgba(250,246,240,0.8);
+            margin-bottom: 32px;
+            line-height: 1.7;
+        }
+        .hero-btns {
+            display: flex;
+            gap: 16px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        /* ========== TRUST BAR ========== */
+        .trust-bar {
+            background: var(--cream-dark);
+            padding: var(--section-pad) 24px;
+        }
+        .trust-items {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 32px;
+            text-align: center;
+        }
+        .trust-item {
+            font-size: 0.9rem;
+            color: var(--text);
+            font-weight: 500;
+        }
+        .trust-item span {
+            color: var(--gold);
+            margin-right: 8px;
+        }
+
+        /* ========== SECTIONS ========== */
+        section {
+            padding: var(--section-pad) 0;
+        }
+        section:nth-child(odd) {
+            background: var(--white);
+        }
+
+        /* ========== ABOUT PREVIEW ========== */
+        .about-preview {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 48px;
+            align-items: center;
+        }
+        .about-preview img {
+            border-radius: 8px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+        }
+        .about-preview-text h3 {
+            font-style: italic;
+            color: var(--gold);
+            margin: 20px 0 16px;
+            font-size: 1.3rem;
+        }
+        .about-preview-text p {
+            color: var(--text-light);
+            margin-bottom: 20px;
+            line-height: 1.7;
+        }
+        .about-preview .btn {
+            margin-top: 20px;
+        }
+
+        /* ========== SERVICES GRID ========== */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 32px;
+            margin-top: 48px;
+        }
+        .service-card {
+            background: var(--white);
+            border: 1px solid var(--border);
+            border-radius: 4px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+        .service-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+        }
+        .service-img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+        }
+        .service-body {
+            padding: 32px;
+        }
+        .service-card h3 {
+            margin-bottom: 12px;
+            color: var(--navy);
+        }
+        .service-card p {
+            color: var(--text-light);
+            font-size: 0.95rem;
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+        .service-link {
+            color: var(--gold);
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: color 0.3s;
+        }
+        .service-link:hover { color: var(--gold-light); }
+
+        /* ========== GALLERY PREVIEW ========== */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 16px;
+            margin-top: 48px;
+        }
+        .gallery-grid img {
+            aspect-ratio: 1;
+            object-fit: cover;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+        .gallery-grid img:hover {
+            transform: scale(1.05);
+        }
+        .gallery-cta {
+            text-align: center;
+            margin-top: 32px;
+        }
+
+        /* ========== TESTIMONIALS ========== */
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 32px;
+            margin-top: 48px;
+        }
+        .testimonial-card {
+            background: var(--cream-dark);
+            padding: 32px;
+            border-radius: 4px;
+            border-left: 3px solid var(--gold);
+        }
+        .testimonial-card p {
+            color: var(--text);
+            font-style: italic;
+            margin-bottom: 20px;
+            line-height: 1.7;
+        }
+        .testimonial-author {
+            font-size: 0.9rem;
+            color: var(--text-light);
+            font-weight: 600;
+        }
+        .testimonial-author span {
+            display: block;
+            font-size: 0.85rem;
+            color: var(--gold);
+            margin-top: 4px;
+        }
+
+        /* ========== COURSES PREVIEW ========== */
+        .courses-preview {
+            background: var(--deep-blue);
+            padding: var(--section-pad) 24px;
+            border-radius: 8px;
+            color: var(--cream);
+            text-align: center;
+        }
+        .courses-preview p {
+            color: rgba(250,246,240,0.8);
+        }
+        .courses-preview .section-eyebrow {
+            color: var(--blue-accent);
+        }
+        .courses-preview h2 {
+            color: var(--cream);
+            margin-bottom: 16px;
+        }
+        .courses-preview .section-subtitle {
+            color: rgba(250,246,240,0.7);
+            margin-bottom: 32px;
+        }
+        .courses-preview-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 24px;
+            margin-top: 32px;
+            margin-bottom: 32px;
+        }
+        .course-tier-preview {
+            background: rgba(255,255,255,0.05);
+            padding: 24px;
+            border-radius: 4px;
+            border: 1px solid rgba(201,169,110,0.2);
+        }
+        .course-tier-preview p {
+            margin-bottom: 12px;
+        }
+        .course-price {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--gold-light);
+            margin: 12px 0;
+        }
+
+        /* ========== CTA BANNER ========== */
+        .cta-banner {
+            background: linear-gradient(135deg, #1B2838 0%, #0D1B2A 50%, #162230 100%);
+            color: var(--cream);
+            padding: var(--section-pad) 24px;
+            text-align: center;
+        }
+        .cta-banner h2 {
+            color: var(--cream);
+            margin-bottom: 12px;
+        }
+        .cta-banner p {
+            color: rgba(250,246,240,0.8);
+            font-size: clamp(0.95rem, 2vw, 1.1rem);
+            margin-bottom: 32px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .cta-btns {
+            display: flex;
+            gap: 16px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        /* ========== FOOTER ========== */
+        .footer {
+            background: var(--navy);
+            color: var(--cream);
+            padding: var(--section-pad) 24px;
+        }
+        .footer-inner {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            gap: 48px;
+            margin-bottom: 40px;
+        }
+        .footer-brand img { height: 40px; margin-bottom: 16px; }
+        .footer-brand p {
+            color: rgba(250,246,240,0.6);
+            font-size: 0.9rem;
+            line-height: 1.6;
+        }
+        .footer h4 { color: var(--cream); margin-bottom: 16px; font-weight: 500; }
+        .footer-links { list-style: none; }
+        .footer-links li { margin-bottom: 10px; }
+        .footer-links a { color: rgba(250,246,240,0.5); font-size: 0.9rem; }
+        .footer-links a:hover { color: var(--gold); }
+        .footer-bottom {
+            max-width: 1100px;
+            margin: 40px auto 0;
+            padding-top: 24px;
+            border-top: 1px solid rgba(250,246,240,0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.8rem;
+            flex-wrap: wrap;
+            gap: 16px;
+        }
+
+        /* ========== COOKIE CONSENT ========== */
+        .cookie-bar {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            z-index: 3000;
+            background: var(--navy);
+            padding: 16px 24px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 24px;
+            font-size: 0.85rem;
+            color: var(--cream);
+            transform: translateY(100%);
+            transition: transform 0.4s;
+        }
+        .cookie-bar.show { transform: translateY(0); }
+        .cookie-bar a { color: var(--gold); }
+        .cookie-accept {
+            background: var(--gold);
+            color: var(--navy);
+            border: none;
+            padding: 8px 24px;
+            font-weight: 600;
+            font-size: 0.8rem;
+            letter-spacing: 0.08em;
+        }
+
+        /* ========== VERSION SWITCHER ========== */
+        .version-switch {
+            color: rgba(250,246,240,0.15); text-decoration: none;
+            transition: color 0.3s, transform 0.3s; display: inline-flex;
+            align-items: center; padding: 4px;
+        }
+        .version-switch:hover { color: var(--gold); transform: scale(1.3); }
+
+        /* ========== RESPONSIVE ========== */
+        @media (max-width: 768px) {
+            .nav-links { display: none; }
+            .hamburger { display: flex; }
+            .about-preview,
+            .footer-inner {
+                grid-template-columns: 1fr;
+            }
+            .gallery-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .trust-items {
+                gap: 24px;
+            }
+            .hero-btns {
+                gap: 12px;
+            }
+            .btn {
+                padding: 12px 24px;
+                font-size: 0.7rem;
+            }
+            .cta-btns {
+                gap: 12px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<!-- GTM noscript -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-N7GPFWH" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+
+<!-- ===== NAVIGATION ===== -->
+<nav class="nav" id="nav">
+    <div class="nav-inner">
+        <a href="/" class="nav-logo">
+            <img src="images/logo/KFD_BLUE_V3.png" alt="Katie Flinn Design Logo">
+        </a>
+        <ul class="nav-links">
+            <li><a href="KatieFlinnDesign_About.html">About</a></li>
+            <li><a href="KatieFlinnDesign_Jewellery.html">Jewellery</a></li>
+            <li><a href="KatieFlinnDesign_Gallery.html">Gallery</a></li>
+            <li><a href="KatieFlinnDesign_Courses.html">Courses</a></li>
+            <li><a href="KatieFlinnDesign_FAQ.html">FAQ</a></li>
+            <li><a href="KatieFlinnDesign_Contact.html">Contact</a></li>
+            <li><a href="KatieFlinnDesign_Contact.html" class="nav-cta">Enquire</a></li>
+        </ul>
+        <button class="hamburger" id="hamburger" aria-label="Open menu">
+            <span></span><span></span><span></span>
+        </button>
+    </div>
+</nav>
+<div class="mobile-menu" id="mobileMenu">
+    <a href="KatieFlinnDesign_About.html" onclick="closeMobile()">About</a>
+    <a href="KatieFlinnDesign_Jewellery.html" onclick="closeMobile()">Jewellery</a>
+    <a href="KatieFlinnDesign_Gallery.html" onclick="closeMobile()">Gallery</a>
+    <a href="KatieFlinnDesign_Courses.html" onclick="closeMobile()">Courses</a>
+    <a href="KatieFlinnDesign_FAQ.html" onclick="closeMobile()">FAQ</a>
+    <a href="KatieFlinnDesign_Contact.html" onclick="closeMobile()">Contact</a>
+</div>
+
+<!-- ===== HERO ===== -->
+<section class="hero" id="hero">
+    <div class="hero-bg"></div>
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+        <p class="hero-eyebrow">Handcrafted in Australia</p>
+        <h1>Otherworldly Jewellery,<br><em>Alchemised with Soul</em></h1>
+        <p class="hero-sub">Sculptural fine jewellery crafted through lost wax casting. Sterling silver, solid gold, and Australian opals — made with intention, one piece at a time.</p>
+        <div class="hero-btns">
+            <a href="KatieFlinnDesign_Jewellery.html" class="btn btn-gold">Explore the Collection</a>
+            <a href="KatieFlinnDesign_Courses.html" class="btn btn-outline">Learn to Make Jewellery</a>
+        </div>
+    </div>
+</section>
+
+<!-- ===== TRUST BAR ===== -->
+<div class="trust-bar">
+    <div class="trust-items">
+        <div class="trust-item"><span>✦</span> 8+ Years Handcrafting</div>
+        <div class="trust-item"><span>✦</span> 41K+ Community</div>
+        <div class="trust-item"><span>✦</span> Australian Opals</div>
+        <div class="trust-item"><span>✦</span> Ethically Sourced</div>
+        <div class="trust-item"><span>✦</span> Ships Worldwide</div>
+    </div>
+</div>
+
+<!-- ===== ABOUT PREVIEW ===== -->
+<section>
+    <div class="container">
+        <div class="about-preview">
+            <img src="images/about/IMG_6364-2.jpg" alt="Katie Flinn in her studio" loading="lazy">
+            <div class="about-preview-text">
+                <p class="section-eyebrow">The Maker</p>
+                <h2>Hey, I'm Katie Flinn</h2>
+                <h3>"My work is intuitive, expressive and guided by the natural flow of creativity."</h3>
+                <p>What started in a tiny blue room in Pushkar, India in 2016 has become a full creative universe. I handcraft every piece from start to finish — currently from my van while travelling Australia.</p>
+                <p>I'm inspired by fantasy worlds, organic textures and undulating, melting movement. Each piece flows seamlessly, as if it was found out in the world already made.</p>
+                <a href="KatieFlinnDesign_About.html" class="btn btn-gold">Read My Full Story</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ===== JEWELLERY / SERVICES ===== -->
+<section>
+    <div class="container">
+        <div class="text-center">
+            <p class="section-eyebrow">What I Create</p>
+            <h2 class="section-title">Otherworldly Treasures</h2>
+            <p class="section-subtitle centered">From ready-to-wear pieces to fully custom commissions — each one sculpted in wax and cast into precious metal by hand.</p>
+        </div>
+        <div class="services-grid">
+            <div class="service-card">
+                <img src="images/products/dragon-eye-ring-us6.jpg" alt="Dragon Eye Ring - handcrafted statement ring" class="service-img" loading="lazy">
+                <div class="service-body">
+                    <h3>Shop Jewellery</h3>
+                    <p>Browse the current collection of ready-to-wear rings, pendants and daggers. Each piece is one-of-a-kind.</p>
+                    <a href="https://www.katieflinndesign.com/shop" class="service-link">Browse the Shop →</a>
+                </div>
+            </div>
+            <div class="service-card">
+                <img src="images/products/custom-hero.jpg" alt="Custom commission jewellery by Katie Flinn" class="service-img" loading="lazy">
+                <div class="service-body">
+                    <h3>Custom Commissions</h3>
+                    <p>Share your vision and let me bring it to life in my signature aesthetic. Commissions start at $2,500 AUD.</p>
+                    <a href="KatieFlinnDesign_Contact.html" class="service-link">Start Your Commission →</a>
+                </div>
+            </div>
+            <div class="service-card">
+                <img src="images/products/realm-rings-set1.jpg" alt="Sold gallery of past handcrafted jewellery" class="service-img" loading="lazy">
+                <div class="service-body">
+                    <h3>Sold Gallery</h3>
+                    <p>Explore past creations for inspiration. Every piece was hand-carved in wax and cast into precious metal.</p>
+                    <a href="https://www.katieflinndesign.com/sold-gallery" class="service-link">View Past Work →</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ===== GALLERY PREVIEW ===== -->
+<section>
+    <div class="container">
+        <div class="text-center">
+            <p class="section-eyebrow">Portfolio</p>
+            <h2 class="section-title">A Glimpse Into the Fantasy</h2>
+            <p class="section-subtitle centered">Every ring, pendant and blade begins as a wax sculpture before being alchemised into precious metal.</p>
+        </div>
+        <div class="gallery-grid">
+            <img src="images/products/frostmourne-ring.jpg" alt="Frostmourne custom engagement ring in 9ct gold" loading="lazy">
+            <img src="images/products/twilight-dreamer.jpg" alt="Twilight Dreamer Ring with gemstones" loading="lazy">
+            <img src="images/products/skywall-palace.jpg" alt="Skywall Palace ring with opal" loading="lazy">
+            <img src="images/products/dragon-eye-ring-us7.jpg" alt="Dragon Eye Ring handcrafted" loading="lazy">
+        </div>
+        <div class="gallery-cta">
+            <a href="KatieFlinnDesign_Gallery.html" class="btn btn-gold">View Full Gallery →</a>
+        </div>
+    </div>
+</section>
+
+<!-- ===== COURSES PREVIEW ===== -->
+<section>
+    <div class="container">
+        <div class="courses-preview">
+            <p class="section-eyebrow">Learn the Craft</p>
+            <h2>Jewellery Making Courses</h2>
+            <p class="section-subtitle centered">No bullshit. No fluff. Eight years of experience distilled into courses you can do from home.</p>
+            <div class="courses-preview-grid">
+                <div class="course-tier-preview">
+                    <p style="font-weight: 600;">Tools Modules</p>
+                    <div class="course-price">$60</div>
+                    <p style="font-size: 0.9rem;">Start small — get equipment checklists.</p>
+                </div>
+                <div class="course-tier-preview" style="border-color: var(--gold); background: rgba(201,169,110,0.1);">
+                    <p style="font-weight: 600; color: var(--gold-light);">★ Bundle</p>
+                    <div class="course-price">$1,222</div>
+                    <p style="font-size: 0.9rem;">Complete experience. Lifetime access.</p>
+                </div>
+                <div class="course-tier-preview">
+                    <p style="font-weight: 600;">Individual Courses</p>
+                    <div class="course-price">$599–$850</div>
+                    <p style="font-size: 0.9rem;">Pick your module. Learn at your pace.</p>
+                </div>
+            </div>
+            <a href="KatieFlinnDesign_Courses.html" class="btn btn-gold">View Full Course Details →</a>
+        </div>
+    </div>
+</section>
+
+<!-- ===== TESTIMONIALS ===== -->
+<section>
+    <div class="container">
+        <div class="text-center">
+            <p class="section-eyebrow">Kind Words</p>
+            <h2 class="section-title">What People Say</h2>
+        </div>
+        <div class="testimonial-grid">
+            <div class="testimonial-card">
+                <p>"Katie Flinn Design — a glimpse into a fantasy world. Her pieces convey a realism which expresses the traditional rustic techniques of jewellery making while embedding her own distinct features."</p>
+                <div class="testimonial-author">The Gem Monarchy <span>— Press Feature</span></div>
+            </div>
+            <div class="testimonial-card">
+                <p>"I started thinking about jewellery design when I left my corporate job. Katie's course gave me everything I needed — now I'm building my skills as a jeweller full time."</p>
+                <div class="testimonial-author">Paris Strada <span>— Course Student</span></div>
+            </div>
+            <div class="testimonial-card">
+                <p>"Ethereal jewellery handcrafted with love. Katie strives for seamlessness in every single piece — her work is truly one of a kind."</p>
+                <div class="testimonial-author">Jewellery World <span>— Press Feature</span></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ===== CTA BANNER ===== -->
+<div class="cta-banner">
+    <h2>Ready to Find Your Treasure?</h2>
+    <p>Whether you're looking for a one-of-a-kind piece or want to learn the craft yourself — let's make something magic.</p>
+    <div class="cta-btns">
+        <a href="https://www.katieflinndesign.com/shop" class="btn btn-gold">Shop the Collection</a>
+        <a href="KatieFlinnDesign_Contact.html" class="btn btn-outline">Book a Custom Commission</a>
+        <a href="KatieFlinnDesign_Courses.html" class="btn btn-outline">View Courses</a>
+    </div>
+</div>
+
+<!-- ===== FOOTER ===== -->
+<footer class="footer">
+    <div class="footer-inner">
+        <div class="footer-brand">
+            <img src="images/logo/KFD_BLUE_V3.png" alt="Katie Flinn Design">
+            <p>Otherworldly treasures alchemised with integrity & quality. Handcrafted fine jewellery, online courses, and creative mentoring.</p>
+        </div>
+        <div>
+            <h4>Explore</h4>
+            <ul class="footer-links">
+                <li><a href="KatieFlinnDesign_Jewellery.html">Shop Jewellery</a></li>
+                <li><a href="KatieFlinnDesign_Gallery.html">Gallery</a></li>
+                <li><a href="KatieFlinnDesign_Courses.html">Courses</a></li>
+                <li><a href="KatieFlinnDesign_About.html">About Katie</a></li>
+            </ul>
+        </div>
+        <div>
+            <h4>Connect</h4>
+            <ul class="footer-links">
+                <li><a href="mailto:hello@katieflinndesign.com">hello@katieflinndesign.com</a></li>
+                <li><a href="https://instagram.com/katieflinndesign" target="_blank" rel="noopener">Instagram</a></li>
+                <li><a href="https://www.facebook.com/katieflinndesign/" target="_blank" rel="noopener">Facebook</a></li>
+                <li><a href="https://www.katieflinndesign.com/termsandconditions">Terms & Conditions</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <span>&copy; 2026 Katie Flinn Design. All rights reserved.</span>
+        <a href="../index.html" class="version-switch" title="Switch to single-flow version" aria-label="Switch site version">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+        </a>
+        <span>Handcrafted in Australia</span>
+    </div>
+</footer>
+
+<!-- ===== COOKIE CONSENT ===== -->
+<div class="cookie-bar" id="cookieBar">
+    <span>This site uses cookies to improve your experience. <a href="https://www.katieflinndesign.com/termsandconditions">Learn more</a></span>
+    <button class="cookie-accept" onclick="acceptCookies()">Accept</button>
+</div>
+
+<script>
+// Navigation
+const nav = document.getElementById('nav');
+const hamburger = document.getElementById('hamburger');
+const mobileMenu = document.getElementById('mobileMenu');
+
+window.addEventListener('scroll', () => {
+    nav.classList.toggle('scrolled', window.scrollY > 50);
+});
+
+hamburger.addEventListener('click', () => {
+    hamburger.classList.toggle('active');
+    mobileMenu.classList.toggle('active');
+    document.body.style.overflow = mobileMenu.classList.contains('active') ? 'hidden' : '';
+});
+
+function closeMobile() {
+    hamburger.classList.remove('active');
+    mobileMenu.classList.remove('active');
+    document.body.style.overflow = '';
+}
+
+// Cookie consent
+if (!localStorage.getItem('cookiesAccepted')) {
+    setTimeout(() => document.getElementById('cookieBar').classList.add('show'), 2000);
+}
+function acceptCookies() {
+    localStorage.setItem('cookiesAccepted', 'true');
+    document.getElementById('cookieBar').classList.remove('show');
+}
+
+// Scroll reveal animation
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.style.opacity = '1';
+            entry.target.style.transform = 'translateY(0)';
+        }
+    });
+}, { threshold: 0.1 });
+
+document.querySelectorAll('section > .container, .trust-bar, .cta-banner').forEach(el => {
+    el.style.opacity = '0';
+    el.style.transform = 'translateY(30px)';
+    el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+    observer.observe(el);
+});
+</script>
+
+</body>
+</html>

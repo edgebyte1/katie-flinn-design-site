@@ -1,0 +1,805 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book a Call with Katie Flinn</title>
+    <meta name="description" content="Schedule a consultation with Katie Flinn Design. Discuss custom commissions, courses, or business mentoring.">
+    <meta property="og:title" content="Book a Call with Katie Flinn">
+    <meta property="og:description" content="Schedule a consultation with Katie Flinn Design.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://katieflinndesign.com/og-image.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="theme-color" content="#0D1B2A">
+
+    <style>
+        /* ===== CSS VARIABLES & DESIGN SYSTEM ===== */
+        :root {
+            --navy: #0D1B2A;
+            --deep-blue: #1B2838;
+            --midnight: #162230;
+            --gold: #C9A96E;
+            --gold-light: #D4BA85;
+            --cream: #FAF6F0;
+            --cream-dark: #F0EBE3;
+            --white: #FFFFFF;
+            --charcoal: #2C2C2C;
+            --text: #3A3A3A;
+            --text-light: #6B6B6B;
+            --blue-accent: #6FB3E5;
+            --border: rgba(201, 169, 110, 0.2);
+            --font-heading: 'Cormorant Garamond', Georgia, serif;
+            --font-body: 'DM Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            --section-pad: clamp(60px, 8vw, 120px);
+            --gap-unit: clamp(16px, 3vw, 32px);
+            --transition: all 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+        }
+
+        /* ===== RESET & BASE ===== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: var(--font-body);
+            color: var(--text);
+            background-color: var(--cream);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* ===== TYPOGRAPHY ===== */
+        h1, h2, h3, h4, h5, h6 {
+            font-family: var(--font-heading);
+            font-weight: 400;
+            line-height: 1.2;
+            color: var(--navy);
+        }
+
+        h1 {
+            font-size: clamp(48px, 8vw, 72px);
+            letter-spacing: -0.02em;
+        }
+
+        h2 {
+            font-size: clamp(36px, 6vw, 56px);
+            letter-spacing: -0.01em;
+        }
+
+        h3 {
+            font-size: clamp(20px, 4vw, 28px);
+        }
+
+        p {
+            font-size: clamp(16px, 2vw, 18px);
+            color: var(--text);
+        }
+
+        a {
+            color: var(--gold);
+            text-decoration: none;
+            transition: color var(--transition);
+        }
+
+        a:hover {
+            color: var(--gold-light);
+        }
+
+        /* ===== NAVIGATION ===== */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background-color: var(--navy);
+            padding: clamp(16px, 3vw, 24px) clamp(20px, 5vw, 40px);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+            box-shadow: 0 2px 8px rgba(13, 27, 42, 0.1);
+        }
+
+        .nav-logo {
+            font-family: var(--font-heading);
+            font-size: clamp(20px, 3vw, 28px);
+            color: var(--gold);
+            font-weight: 600;
+            letter-spacing: -0.01em;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: clamp(24px, 4vw, 40px);
+        }
+
+        .nav-links a {
+            color: var(--cream);
+            font-size: clamp(14px, 2vw, 16px);
+            transition: color var(--transition);
+            position: relative;
+        }
+
+        .nav-links a:hover {
+            color: var(--gold);
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--gold);
+            transition: width var(--transition);
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            gap: 6px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            z-index: 1001;
+        }
+
+        .hamburger span {
+            width: 24px;
+            height: 2px;
+            background-color: var(--gold);
+            border-radius: 2px;
+            transition: all var(--transition);
+        }
+
+        .hamburger.active span:nth-child(1) {
+            transform: rotate(45deg) translate(10px, 10px);
+        }
+
+        .hamburger.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .hamburger.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(7px, -7px);
+        }
+
+        /* ===== MOBILE MENU ===== */
+        .mobile-menu {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: var(--navy);
+            padding-top: 100px;
+            display: none;
+            flex-direction: column;
+            gap: var(--gap-unit);
+            padding-left: clamp(20px, 5vw, 40px);
+            z-index: 999;
+        }
+
+        .mobile-menu.active {
+            display: flex;
+        }
+
+        .mobile-menu a {
+            color: var(--cream);
+            font-size: clamp(18px, 4vw, 24px);
+            transition: color var(--transition);
+        }
+
+        .mobile-menu a:hover {
+            color: var(--gold);
+        }
+
+        /* ===== HERO SECTION ===== */
+        .hero {
+            margin-top: clamp(80px, 12vh, 120px);
+            padding: var(--section-pad) clamp(20px, 5vw, 40px);
+            text-align: center;
+            background: linear-gradient(135deg, var(--navy) 0%, var(--deep-blue) 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle, rgba(201, 169, 110, 0.05) 0%, transparent 70%);
+            pointer-events: none;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero-eyebrow {
+            font-family: var(--font-body);
+            font-size: clamp(12px, 2vw, 14px);
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            color: var(--gold);
+            margin-bottom: clamp(12px, 2vw, 16px);
+            font-weight: 600;
+        }
+
+        .hero h1 {
+            color: var(--cream);
+            margin-bottom: clamp(16px, 3vw, 24px);
+        }
+
+        .hero p {
+            color: var(--cream-dark);
+            font-size: clamp(16px, 2.5vw, 20px);
+            margin-bottom: clamp(32px, 5vw, 48px);
+        }
+
+        /* ===== BOOKING WIDGET CONTAINER ===== */
+        .booking-container {
+            padding: var(--section-pad) clamp(20px, 5vw, 40px);
+            background-color: var(--cream);
+        }
+
+        .booking-widget {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: var(--white);
+            border-radius: clamp(12px, 2vw, 16px);
+            padding: clamp(40px, 8vw, 60px);
+            box-shadow: 0 4px 16px rgba(13, 27, 42, 0.08);
+            min-height: 600px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            border: 2px dashed var(--border);
+        }
+
+        .booking-widget-placeholder {
+            color: var(--text-light);
+        }
+
+        .booking-widget-placeholder h3 {
+            margin-bottom: clamp(12px, 2vw, 16px);
+            color: var(--navy);
+        }
+
+        .booking-widget-placeholder p {
+            font-size: clamp(14px, 2vw, 16px);
+            margin-bottom: clamp(20px, 3vw, 32px);
+            line-height: 1.6;
+        }
+
+        .booking-code {
+            background-color: var(--cream-dark);
+            padding: clamp(16px, 3vw, 24px);
+            border-radius: 8px;
+            font-family: 'Monaco', 'Courier New', monospace;
+            font-size: clamp(12px, 2vw, 14px);
+            color: var(--navy);
+            text-align: left;
+            overflow-x: auto;
+            margin-top: clamp(16px, 3vw, 24px);
+        }
+
+        /* ===== INFO CARDS ===== */
+        .info-cards-section {
+            padding: var(--section-pad) clamp(20px, 5vw, 40px);
+            background-color: var(--white);
+        }
+
+        .info-cards-section h2 {
+            text-align: center;
+            margin-bottom: clamp(48px, 8vw, 72px);
+            color: var(--navy);
+        }
+
+        .info-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: clamp(24px, 4vw, 40px);
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .info-card {
+            background: linear-gradient(135deg, var(--cream) 0%, var(--white) 100%);
+            border: 1px solid var(--border);
+            padding: clamp(32px, 5vw, 48px);
+            border-radius: clamp(12px, 2vw, 16px);
+            transition: all var(--transition);
+            cursor: pointer;
+            text-align: center;
+        }
+
+        .info-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 32px rgba(13, 27, 42, 0.12);
+            border-color: var(--gold);
+        }
+
+        .info-card-icon {
+            width: clamp(48px, 8vw, 64px);
+            height: clamp(48px, 8vw, 64px);
+            background-color: var(--navy);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto clamp(20px, 3vw, 28px);
+            font-size: clamp(24px, 4vw, 32px);
+        }
+
+        .info-card h3 {
+            margin-bottom: clamp(12px, 2vw, 16px);
+            color: var(--navy);
+        }
+
+        .info-card p {
+            color: var(--text-light);
+            font-size: clamp(14px, 2vw, 16px);
+            line-height: 1.6;
+        }
+
+        /* ===== FOOTER ===== */
+        footer {
+            background-color: var(--navy);
+            color: var(--cream);
+            padding: clamp(48px, 8vw, 72px) clamp(20px, 5vw, 40px);
+            margin-top: var(--section-pad);
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: clamp(40px, 6vw, 60px);
+            margin-bottom: clamp(40px, 6vw, 60px);
+        }
+
+        .footer-section h4 {
+            color: var(--gold);
+            font-family: var(--font-heading);
+            font-size: clamp(16px, 2.5vw, 20px);
+            margin-bottom: clamp(16px, 2vw, 24px);
+        }
+
+        .footer-section ul {
+            list-style: none;
+        }
+
+        .footer-section ul li {
+            margin-bottom: clamp(8px, 1vw, 12px);
+        }
+
+        .footer-section a {
+            color: var(--cream);
+            transition: color var(--transition);
+            font-size: clamp(14px, 2vw, 16px);
+        }
+
+        .footer-section a:hover {
+            color: var(--gold);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid var(--border);
+            padding-top: clamp(24px, 4vw, 32px);
+            text-align: center;
+            font-size: clamp(12px, 1.5vw, 14px);
+            color: var(--text-light);
+        }
+
+        .footer-bottom p {
+            color: var(--text-light);
+            margin-bottom: clamp(8px, 1vw, 12px);
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: clamp(20px, 4vw, 32px);
+            flex-wrap: wrap;
+            margin-top: clamp(16px, 2vw, 24px);
+        }
+
+        .footer-links a {
+            color: var(--text-light);
+            font-size: clamp(12px, 1.5vw, 14px);
+        }
+
+        /* ===== BUTTONS ===== */
+        .btn {
+            display: inline-block;
+            padding: clamp(12px, 2vw, 16px) clamp(24px, 4vw, 32px);
+            border-radius: 6px;
+            font-size: clamp(14px, 2vw, 16px);
+            font-weight: 600;
+            transition: all var(--transition);
+            cursor: pointer;
+            border: none;
+            text-decoration: none;
+            font-family: var(--font-body);
+        }
+
+        .btn-gold {
+            background-color: var(--gold);
+            color: var(--navy);
+        }
+
+        .btn-gold:hover {
+            background-color: var(--gold-light);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 16px rgba(201, 169, 110, 0.2);
+        }
+
+        .btn-outline {
+            border: 2px solid var(--gold);
+            color: var(--gold);
+            background-color: transparent;
+        }
+
+        .btn-outline:hover {
+            background-color: var(--gold);
+            color: var(--navy);
+        }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .hamburger {
+                display: flex;
+            }
+
+            .info-cards {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* ===== COOKIE CONSENT ===== */
+        .cookie-banner {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background-color: var(--navy);
+            color: var(--cream);
+            padding: clamp(20px, 4vw, 32px) clamp(20px, 5vw, 40px);
+            display: none;
+            gap: clamp(16px, 3vw, 24px);
+            align-items: center;
+            justify-content: space-between;
+            z-index: 900;
+            flex-wrap: wrap;
+            box-shadow: 0 -4px 16px rgba(13, 27, 42, 0.2);
+        }
+
+        .cookie-banner.active {
+            display: flex;
+        }
+
+        .cookie-text {
+            font-size: clamp(14px, 2vw, 16px);
+            flex: 1;
+            min-width: 250px;
+        }
+
+        .cookie-text a {
+            color: var(--gold);
+        }
+
+        .cookie-actions {
+            display: flex;
+            gap: clamp(12px, 2vw, 16px);
+        }
+
+        .cookie-btn {
+            padding: clamp(8px, 1.5vw, 12px) clamp(16px, 3vw, 24px);
+            border: none;
+            border-radius: 4px;
+            font-size: clamp(12px, 1.5vw, 14px);
+            cursor: pointer;
+            font-weight: 600;
+            transition: all var(--transition);
+        }
+
+        .cookie-accept {
+            background-color: var(--gold);
+            color: var(--navy);
+        }
+
+        .cookie-accept:hover {
+            background-color: var(--gold-light);
+        }
+
+        .cookie-decline {
+            background-color: transparent;
+            color: var(--cream);
+            border: 1px solid var(--gold);
+        }
+
+        .cookie-decline:hover {
+            background-color: var(--gold);
+            color: var(--navy);
+        }
+    </style>
+</head>
+
+<body>
+    <!-- ===== NAVIGATION ===== -->
+    <nav>
+        <div class="nav-logo">Katie Flinn Design</div>
+        <ul class="nav-links">
+            <li><a href="/">Home</a></li>
+            <li><a href="/shop">Shop</a></li>
+            <li><a href="/courses">Courses</a></li>
+            <li><a href="/about">About</a></li>
+            <li><a href="/contact">Contact</a></li>
+        </ul>
+        <button class="hamburger" aria-label="Toggle menu" onclick="toggleMobileMenu()">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+    </nav>
+
+    <!-- ===== MOBILE MENU ===== -->
+    <div class="mobile-menu" id="mobileMenu">
+        <a href="/">Home</a>
+        <a href="/shop">Shop</a>
+        <a href="/courses">Courses</a>
+        <a href="/about">About</a>
+        <a href="/contact">Contact</a>
+    </div>
+
+    <!-- ===== HERO SECTION ===== -->
+    <section class="hero">
+        <div class="hero-content">
+            <p class="hero-eyebrow">Schedule a Consultation</p>
+            <h1>Book a Call with Katie</h1>
+            <p>Let's discuss your project, course questions, or business mentoring needs. Pick a time that works for you.</p>
+        </div>
+    </section>
+
+    <!-- ===== BOOKING WIDGET CONTAINER ===== -->
+    <section class="booking-container">
+        <div class="booking-widget" id="bookingWidget">
+            <div class="booking-widget-placeholder">
+                <h3>Calendly or Cal.com Embed</h3>
+                <p>Replace this placeholder with your booking widget embed code.</p>
+                <div class="booking-code">
+<!-- EMBED INSTRUCTION:
+Replace this entire section with:
+- Calendly: &lt;div class="calendly-inline-widget" data-url="YOUR_CALENDLY_URL"&gt;&lt;/div&gt;&lt;script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js"&gt;&lt;/script&gt;
+- Cal.com: &lt;iframe src="YOUR_CAL_COM_URL" style="width: 100%; height: 600px; border: none; border-radius: 12px;"&gt;&lt;/iframe&gt;
+
+Get your URL from your booking provider's embed instructions.
+                -->
+                &lt;iframe src="YOUR_CALENDLY_OR_CAL_URL"&gt;&lt;/iframe&gt;
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== INFO CARDS ===== -->
+    <section class="info-cards-section">
+        <h2>What Can We Discuss?</h2>
+        <div class="info-cards">
+            <div class="info-card">
+                <div class="info-card-icon">✨</div>
+                <h3>Custom Commissions</h3>
+                <p>Explore custom design work, bespoke brand identity projects, and tailored solutions for your business or creative vision.</p>
+            </div>
+            <div class="info-card">
+                <div class="info-card-icon">📚</div>
+                <h3>Course Questions</h3>
+                <p>Get clarity on Katie's design courses, curriculum details, enrollment options, and how they can accelerate your creative skills.</p>
+            </div>
+            <div class="info-card">
+                <div class="info-card-icon">💼</div>
+                <h3>Business Mentoring</h3>
+                <p>Discuss business strategy, scaling your creative practice, positioning yourself as a designer, and building a profitable brand.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== FOOTER ===== -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>Katie Flinn Design</h4>
+                <p>Luxury brand design & strategic positioning for creative professionals.</p>
+            </div>
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/shop">Shop</a></li>
+                    <li><a href="/courses">Courses</a></li>
+                    <li><a href="/about">About</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Get in Touch</h4>
+                <p><a href="mailto:hello@katieflinndesign.com">hello@katieflinndesign.com</a></p>
+                <p>PO Box 1141<br>Elsternwick VIC 3185</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Katie Flinn Design. All rights reserved.</p>
+            <div class="footer-links">
+                <a href="/privacy">Privacy Policy</a>
+                <a href="/terms">Terms of Service</a>
+                <a href="/contact">Contact</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ===== COOKIE CONSENT BANNER ===== -->
+    <div class="cookie-banner" id="cookieBanner">
+        <div class="cookie-text">
+            We use cookies and tracking to improve your experience and analyse site performance. By continuing, you consent to our <a href="/privacy">Privacy Policy</a>.
+        </div>
+        <div class="cookie-actions">
+            <button class="cookie-btn cookie-decline" onclick="declineCookies()">Decline</button>
+            <button class="cookie-btn cookie-accept" onclick="acceptCookies()">Accept</button>
+        </div>
+    </div>
+
+    <!-- ===== SCRIPTS ===== -->
+    <script>
+        /* ===== MOBILE MENU TOGGLE ===== */
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobileMenu');
+            const hamburger = document.querySelector('.hamburger');
+            menu.classList.toggle('active');
+            hamburger.classList.toggle('active');
+        }
+
+        // Close mobile menu when link is clicked
+        document.querySelectorAll('.mobile-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                document.getElementById('mobileMenu').classList.remove('active');
+                document.querySelector('.hamburger').classList.remove('active');
+            });
+        });
+
+        /* ===== COOKIE CONSENT ===== */
+        function initCookieConsent() {
+            if (!localStorage.getItem('cookieConsent')) {
+                document.getElementById('cookieBanner').classList.add('active');
+            }
+        }
+
+        function acceptCookies() {
+            localStorage.setItem('cookieConsent', 'accepted');
+            document.getElementById('cookieBanner').classList.remove('active');
+            loadTrackingScripts();
+        }
+
+        function declineCookies() {
+            localStorage.setItem('cookieConsent', 'declined');
+            document.getElementById('cookieBanner').classList.remove('active');
+        }
+
+        function loadTrackingScripts() {
+            // Google Tag Manager (noscript fallback already in page)
+            const gtmScript = document.createElement('script');
+            gtmScript.async = true;
+            gtmScript.src = 'https://www.googletagmanager.com/gtag/js?id=G-2ZBPVC88BX';
+            document.head.appendChild(gtmScript);
+
+            // Google Analytics
+            window.dataLayer = window.dataLayer || [];
+            function gtag() { dataLayer.push(arguments); }
+            gtag('js', new Date());
+            gtag('config', 'G-2ZBPVC88BX', { 'anonymize_ip': true });
+
+            // Facebook Pixel
+            !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
+            fbq('init', '327540794544886');
+            fbq('track', 'PageView');
+        }
+
+        /* ===== GTAG CONVERSION TRACKING ===== */
+        function trackBookingAttempt() {
+            if (typeof gtag !== 'undefined') {
+                gtag('event', 'generate_lead', {
+                    'event_category': 'booking',
+                    'event_label': 'booking_page_loaded'
+                });
+            }
+        }
+
+        /* ===== PAGE LOAD ===== */
+        document.addEventListener('DOMContentLoaded', () => {
+            initCookieConsent();
+            trackBookingAttempt();
+
+            // Track card clicks for engagement
+            document.querySelectorAll('.info-card').forEach(card => {
+                card.addEventListener('click', () => {
+                    const cardTitle = card.querySelector('h3').textContent;
+                    if (typeof gtag !== 'undefined') {
+                        gtag('event', 'view_item', {
+                            'items': [{
+                                'id': cardTitle.replace(/\s+/g, '_').toLowerCase(),
+                                'name': cardTitle,
+                                'category': 'service_option'
+                            }]
+                        });
+                    }
+                });
+            });
+        });
+
+        // GTM / GA Tag Manager snippet
+        (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-N7GPFWH');
+    </script>
+
+    <!-- ===== GTAG (Google Analytics 4) ===== -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-2ZBPVC88BX"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-2ZBPVC88BX', { 'anonymize_ip': true });
+    </script>
+
+    <!-- ===== FACEBOOK PIXEL ===== -->
+    <noscript>
+        <img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=327540794544886&ev=PageView&noscript=1" />
+    </noscript>
+
+    <!-- ===== GTM NOSCRIPT ===== -->
+    <noscript>
+        <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-N7GPFWH" height="0" width="0" style="display:none;visibility:hidden"></iframe>
+    </noscript>
+
+    <!-- ===== SCHEMA MARKUP (LocalBusiness) ===== -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "LocalBusiness",
+        "name": "Katie Flinn Design",
+        "url": "https://katieflinndesign.com",
+        "email": "hello@katieflinndesign.com",
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "PO Box 1141",
+            "addressLocality": "Elsternwick",
+            "addressRegion": "VIC",
+            "postalCode": "3185",
+            "addressCountry": "AU"
+        },
+        "description": "Luxury brand design and strategic positioning for creative professionals"
+    }
+    </script>
+
+</body>
+</html>

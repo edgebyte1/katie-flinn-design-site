@@ -1,0 +1,643 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Share your experience with Katie Flinn Design. Your feedback helps us improve.">
+    <meta name="theme-color" content="#0D1B2A">
+
+    <title>Share Your Experience | Katie Flinn Design</title>
+
+    <meta property="og:title" content="Share Your Experience | Katie Flinn Design">
+    <meta property="og:description" content="We'd love to hear about your experience with Katie Flinn Design.">
+    <meta property="og:type" content="website">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=DM+Sans:wght@300;400;500;700&display=swap" rel="stylesheet">
+
+    <style>
+        /* ===== CSS VARIABLES ===== */
+        :root {
+            --navy: #0D1B2A;
+            --deep-blue: #1B2838;
+            --midnight: #162230;
+            --gold: #C9A96E;
+            --gold-light: #D4BA85;
+            --cream: #FAF6F0;
+            --cream-dark: #F0EBE3;
+            --white: #FFFFFF;
+            --charcoal: #2C2C2C;
+            --text: #3A3A3A;
+            --text-light: #6B6B6B;
+            --blue-accent: #6FB3E5;
+            --border: rgba(201, 169, 110, 0.2);
+            --font-heading: 'Cormorant Garamond', Georgia, serif;
+            --font-body: 'DM Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            --section-pad: clamp(60px, 8vw, 120px);
+        }
+
+        /* ===== RESET & BASE ===== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html, body {
+            width: 100%;
+            height: 100%;
+        }
+
+        body {
+            font-family: var(--font-body);
+            font-size: 16px;
+            line-height: 1.6;
+            color: var(--text);
+            background-color: var(--cream);
+            overflow-x: hidden;
+        }
+
+        /* ===== LAYOUT ===== */
+        .container {
+            width: 100%;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: var(--section-pad) clamp(20px, 5vw, 40px);
+        }
+
+        .card {
+            width: 100%;
+            max-width: 520px;
+            background: var(--white);
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(13, 27, 42, 0.08);
+            padding: clamp(40px, 8vw, 60px);
+            text-align: center;
+        }
+
+        /* ===== HEADER ===== */
+        .header {
+            margin-bottom: clamp(40px, 8vw, 60px);
+        }
+
+        .logo {
+            height: 48px;
+            margin-bottom: 24px;
+            display: inline-block;
+        }
+
+        .logo img {
+            height: 100%;
+            width: auto;
+            max-width: 200px;
+        }
+
+        .header h1 {
+            font-family: var(--font-heading);
+            font-size: clamp(32px, 6vw, 48px);
+            font-weight: 600;
+            color: var(--navy);
+            margin-bottom: 12px;
+            line-height: 1.2;
+        }
+
+        .header p {
+            font-size: clamp(14px, 3vw, 16px);
+            color: var(--text-light);
+            font-weight: 400;
+        }
+
+        /* ===== RATING SECTION ===== */
+        .rating-section {
+            margin-bottom: 40px;
+        }
+
+        .stars-container {
+            display: flex;
+            justify-content: center;
+            gap: clamp(16px, 4vw, 24px);
+            margin-top: 32px;
+        }
+
+        .star-btn {
+            width: 60px;
+            height: 60px;
+            min-width: 60px;
+            min-height: 60px;
+            border: none;
+            background: none;
+            cursor: pointer;
+            font-size: 48px;
+            color: rgba(201, 169, 110, 0.3);
+            transition: all 0.3s ease;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0;
+        }
+
+        .star-btn:hover,
+        .star-btn:focus {
+            background-color: rgba(201, 169, 110, 0.1);
+            color: var(--gold);
+            outline: 2px solid var(--gold);
+            outline-offset: 2px;
+        }
+
+        .star-btn.active {
+            color: var(--gold);
+            background-color: rgba(201, 169, 110, 0.15);
+        }
+
+        /* ===== RESPONSE SECTIONS (HIDDEN BY DEFAULT) ===== */
+        .response-section {
+            display: none;
+            animation: fadeIn 0.4s ease-in-out;
+        }
+
+        .response-section.show {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* ===== THANK YOU (4-5 STARS) ===== */
+        .thank-you {
+            text-align: center;
+        }
+
+        .thank-you h2 {
+            font-family: var(--font-heading);
+            font-size: clamp(28px, 5vw, 40px);
+            font-weight: 600;
+            color: var(--navy);
+            margin-bottom: 16px;
+        }
+
+        .thank-you p {
+            color: var(--text-light);
+            margin-bottom: 24px;
+            font-size: 15px;
+        }
+
+        .countdown {
+            font-size: 14px;
+            color: var(--gold);
+            font-weight: 600;
+            margin-top: 16px;
+        }
+
+        .fallback-link {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 12px 28px;
+            background-color: var(--gold);
+            color: var(--navy);
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: 600;
+            font-size: 14px;
+            transition: background-color 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+
+        .fallback-link:hover {
+            background-color: var(--gold-light);
+        }
+
+        /* ===== FEEDBACK FORM (1-3 STARS) ===== */
+        .feedback-form h2 {
+            font-family: var(--font-heading);
+            font-size: clamp(28px, 5vw, 40px);
+            font-weight: 600;
+            color: var(--navy);
+            margin-bottom: 28px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+            text-align: left;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--text);
+            margin-bottom: 8px;
+        }
+
+        .form-group input[type="text"],
+        .form-group input[type="email"],
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 12px 14px;
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            font-family: var(--font-body);
+            font-size: 15px;
+            background-color: var(--cream);
+            color: var(--text);
+            transition: border-color 0.3s ease;
+        }
+
+        .form-group input[type="text"]:focus,
+        .form-group input[type="email"]:focus,
+        .form-group textarea:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: var(--gold);
+            background-color: var(--white);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 100px;
+            font-family: var(--font-body);
+        }
+
+        .checkbox-group {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-align: left;
+            margin-bottom: 24px;
+        }
+
+        .checkbox-group input[type="checkbox"] {
+            width: 18px;
+            height: 18px;
+            cursor: pointer;
+            accent-color: var(--gold);
+        }
+
+        .checkbox-group label {
+            margin: 0;
+            font-size: 14px;
+            cursor: pointer;
+            color: var(--text-light);
+        }
+
+        .submit-btn {
+            width: 100%;
+            padding: 14px 28px;
+            background-color: var(--navy);
+            color: var(--white);
+            border: none;
+            border-radius: 6px;
+            font-size: 15px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            margin-top: 8px;
+        }
+
+        .submit-btn:hover {
+            background-color: var(--deep-blue);
+        }
+
+        .submit-btn:active {
+            transform: scale(0.98);
+        }
+
+        /* ===== CONFIRMATION ===== */
+        .confirmation {
+            text-align: center;
+        }
+
+        .confirmation h2 {
+            font-family: var(--font-heading);
+            font-size: clamp(28px, 5vw, 40px);
+            font-weight: 600;
+            color: var(--navy);
+            margin-bottom: 16px;
+        }
+
+        .confirmation p {
+            color: var(--text-light);
+            font-size: 15px;
+        }
+
+        .checkmark {
+            width: 64px;
+            height: 64px;
+            margin: 0 auto 24px;
+            background-color: rgba(201, 169, 110, 0.15);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 32px;
+        }
+
+        /* ===== FOOTER ===== */
+        .footer {
+            margin-top: auto;
+            padding-top: 40px;
+            text-align: center;
+            font-size: 12px;
+            color: var(--text-light);
+            border-top: 1px solid var(--border);
+        }
+
+        .footer-link {
+            color: var(--gold);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-link:hover {
+            color: var(--gold-light);
+        }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 640px) {
+            .container {
+                padding: 40px clamp(16px, 4vw, 24px);
+            }
+
+            .card {
+                padding: clamp(32px, 6vw, 48px);
+            }
+
+            .stars-container {
+                gap: clamp(12px, 3vw, 18px);
+            }
+
+            .star-btn {
+                width: 52px;
+                height: 52px;
+                min-width: 52px;
+                min-height: 52px;
+                font-size: 40px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="card">
+            <!-- HEADER -->
+            <div class="header">
+                <div class="logo">
+                    <img src="images/logo/KFD_BLUE_V3.png" alt="Katie Flinn Design" onerror="this.style.display='none'">
+                </div>
+                <h1>How was your experience?</h1>
+                <p>Your feedback helps us improve</p>
+            </div>
+
+            <!-- RATING SECTION -->
+            <div class="rating-section" id="ratingSection">
+                <div class="stars-container">
+                    <button class="star-btn" data-rating="1" aria-label="1 star - Poor">★</button>
+                    <button class="star-btn" data-rating="2" aria-label="2 stars - Fair">★</button>
+                    <button class="star-btn" data-rating="3" aria-label="3 stars - Good">★</button>
+                    <button class="star-btn" data-rating="4" aria-label="4 stars - Very Good">★</button>
+                    <button class="star-btn" data-rating="5" aria-label="5 stars - Excellent">★</button>
+                </div>
+            </div>
+
+            <!-- THANK YOU MESSAGE (4-5 STARS) -->
+            <div class="response-section thank-you" id="thankYouSection">
+                <h2>Thank you! ✨</h2>
+                <p>We're so grateful for your kind words. Your review helps other potential clients discover our work.</p>
+                <p>Redirecting you to share your experience on Google...</p>
+                <div class="countdown" id="countdown">Redirecting in 5 seconds...</div>
+                <a href="#" class="fallback-link" id="googleLink">Click here if not redirected</a>
+            </div>
+
+            <!-- FEEDBACK FORM (1-3 STARS) -->
+            <div class="response-section feedback-form" id="feedbackSection">
+                <h2>We'd love to hear more</h2>
+                <form id="feedbackForm">
+                    <div class="form-group">
+                        <label for="name">Your Name *</label>
+                        <input type="text" id="name" name="name" required minlength="2">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Email Address *</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="area">Area of Concern *</label>
+                        <select id="area" name="area" required>
+                            <option value="">Select an area...</option>
+                            <option value="Communication">Communication</option>
+                            <option value="Timeline">Timeline</option>
+                            <option value="Quality">Quality</option>
+                            <option value="Process">Process</option>
+                            <option value="Support">Support</option>
+                            <option value="Other">Other</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="feedback">Your Feedback *</label>
+                        <textarea id="feedback" name="feedback" required minlength="10" placeholder="Please tell us what we could have done better..."></textarea>
+                    </div>
+
+                    <div class="checkbox-group">
+                        <input type="checkbox" id="contact" name="contact" value="yes">
+                        <label for="contact">Yes, I'd like Katie's team to follow up</label>
+                    </div>
+
+                    <button type="submit" class="submit-btn">Send Feedback</button>
+                </form>
+            </div>
+
+            <!-- CONFIRMATION -->
+            <div class="response-section confirmation" id="confirmationSection">
+                <div class="checkmark">✓</div>
+                <h2>Thank you for your feedback</h2>
+                <p>We appreciate you taking the time to share your thoughts. Katie's team will review your feedback and may reach out to make things right.</p>
+            </div>
+
+            <!-- FOOTER -->
+            <div class="footer">
+                <p>Katie Flinn Design | <a href="https://katieflinndesign.com" class="footer-link">katieflinndesign.com</a></p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        /* ===== CONFIG ===== */
+        const GOOGLE_URL = 'https://g.page/r/XXXXXXXX/review'; // PASTE_GOOGLE_REVIEW_URL_HERE
+        const MAKE_WEBHOOK = 'PASTE_MAKE_WEBHOOK_URL_HERE';
+        const FALLBACK_EMAIL = 'hello@katieflinndesign.com';
+        const REDIRECT_MS = 5000;
+
+        /* ===== STATE ===== */
+        let currentRating = null;
+        let sessionId = generateUUID();
+
+        /* ===== UTILITIES ===== */
+        function generateUUID() {
+            return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
+                const r = Math.random() * 16 | 0;
+                const v = c === 'x' ? r : (r & 0x3 | 0x8);
+                return v.toString(16);
+            });
+        }
+
+        async function sendWebhook(payload) {
+            try {
+                await fetch(MAKE_WEBHOOK, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(payload)
+                });
+            } catch (e) {
+                console.log('Webhook error (silent fail):', e.message);
+            }
+        }
+
+        function getRatingLabel(rating) {
+            const labels = { 1: 'Poor', 2: 'Fair', 3: 'Good', 4: 'Very Good', 5: 'Excellent' };
+            return labels[rating] || '';
+        }
+
+        /* ===== STAR RATING ===== */
+        document.querySelectorAll('.star-btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                const rating = parseInt(this.dataset.rating);
+                handleStarClick(rating);
+            });
+        });
+
+        function handleStarClick(rating) {
+            currentRating = rating;
+
+            document.querySelectorAll('.star-btn').forEach((btn, idx) => {
+                btn.classList.toggle('active', (idx + 1) <= rating);
+            });
+
+            const payload = {
+                type: 'star_tap',
+                session_id: sessionId,
+                rating: rating,
+                rating_label: getRatingLabel(rating),
+                business: 'Katie Flinn Design',
+                timestamp: new Date().toISOString()
+            };
+
+            sendWebhook(payload);
+
+            setTimeout(() => {
+                document.getElementById('ratingSection').classList.add('show');
+                if (rating >= 4) {
+                    showThankYou();
+                } else {
+                    showFeedbackForm();
+                }
+            }, 300);
+        }
+
+        /* ===== THANK YOU FLOW (4-5 STARS) ===== */
+        function showThankYou() {
+            document.getElementById('ratingSection').style.display = 'none';
+            document.getElementById('feedbackSection').classList.remove('show');
+            document.getElementById('confirmationSection').classList.remove('show');
+            document.getElementById('thankYouSection').classList.add('show');
+
+            const googleLink = document.getElementById('googleLink');
+            googleLink.href = GOOGLE_URL;
+
+            let secondsLeft = REDIRECT_MS / 1000;
+            const countdownEl = document.getElementById('countdown');
+
+            const countdownInterval = setInterval(() => {
+                secondsLeft--;
+                countdownEl.textContent = `Redirecting in ${secondsLeft} second${secondsLeft !== 1 ? 's' : ''}...`;
+                if (secondsLeft <= 0) {
+                    clearInterval(countdownInterval);
+                    sendWebhook({
+                        type: 'google_click',
+                        session_id: sessionId,
+                        business: 'Katie Flinn Design',
+                        timestamp: new Date().toISOString()
+                    });
+                    window.location.href = GOOGLE_URL;
+                }
+            }, 1000);
+        }
+
+        /* ===== FEEDBACK FORM (1-3 STARS) ===== */
+        function showFeedbackForm() {
+            document.getElementById('ratingSection').style.display = 'none';
+            document.getElementById('thankYouSection').classList.remove('show');
+            document.getElementById('confirmationSection').classList.remove('show');
+            document.getElementById('feedbackSection').classList.add('show');
+            document.getElementById('name').focus();
+        }
+
+        document.getElementById('feedbackForm').addEventListener('submit', async function(e) {
+            e.preventDefault();
+
+            const formData = {
+                name: document.getElementById('name').value,
+                email: document.getElementById('email').value,
+                feedback: document.getElementById('feedback').value,
+                area: document.getElementById('area').value,
+                contact_requested: document.getElementById('contact').checked
+            };
+
+            const payload = {
+                type: 'form_submit',
+                session_id: sessionId,
+                rating: currentRating,
+                rating_label: getRatingLabel(currentRating),
+                name: formData.name,
+                email: formData.email,
+                feedback: formData.feedback,
+                area: formData.area,
+                contact_requested: formData.contact_requested,
+                business: 'Katie Flinn Design',
+                timestamp: new Date().toISOString()
+            };
+
+            await sendWebhook(payload);
+
+            document.getElementById('feedbackSection').classList.remove('show');
+            document.getElementById('confirmationSection').classList.add('show');
+        });
+
+        /* ===== TRACKING (GA4, GTM, FACEBOOK PIXEL) ===== */
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-2ZBPVC88BX');
+
+        const script1 = document.createElement('script');
+        script1.async = true;
+        script1.src = 'https://www.googletagmanager.com/gtag/js?id=G-2ZBPVC88BX';
+        document.head.appendChild(script1);
+
+        const script2 = document.createElement('script');
+        script2.async = true;
+        script2.src = 'https://www.googletagmanager.com/gtm.js?id=GTM-N7GPFWH';
+        document.head.appendChild(script2);
+
+        const script3 = document.createElement('script');
+        script3.innerHTML = `!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window, document,'script','https://connect.facebook.net/en_US/fbevents.js');fbq('init', '327540794544886');fbq('track', 'PageView');`;
+        document.head.appendChild(script3);
+    </script>
+</body>
+</html>

@@ -1,0 +1,668 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jewellery & Services - Katie Flinn Design</title>
+    <meta name="description" content="Explore Katie Flinn Design's custom jewellery, commissions, and sold gallery. Handcrafted pieces using traditional lost wax casting techniques.">
+    
+    <!-- Open Graph Tags -->
+    <meta property="og:title" content="Jewellery & Services - Katie Flinn Design">
+    <meta property="og:description" content="Handcrafted jewellery and custom commissions using traditional lost wax casting.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://katieflinndesign.com.au/jewellery">
+    <meta property="og:image" content="https://katieflinndesign.com.au/og-image.jpg">
+    
+    <!-- Schema Markup -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": "Katie Flinn Design",
+      "description": "Custom handcrafted jewellery using traditional lost wax casting techniques",
+      "url": "https://katieflinndesign.com.au",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Elsternwick",
+        "addressRegion": "VIC",
+        "postalCode": "3185",
+        "addressCountry": "AU"
+      }
+    }
+    </script>
+    
+    <!-- Google Analytics 4 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-2ZBPVC88BX"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-2ZBPVC88BX');
+    </script>
+    
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-N7GPFWH');</script>
+    
+    <!-- Facebook Pixel -->
+    <script>
+        !function(f,b,e,v,n,t,s)
+        {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+        n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+        if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+        n.queue=[];t=b.createElement(e);t.async=!0;
+        t.src=v;s=b.getElementsByTagName(e)[0];
+        s.parentNode.insertBefore(t,s)}(window, document,'script',
+        'https://connect.facebook.net/en_US/fbevents.js');
+        fbq('init', '327540794544886');
+        fbq('track', 'PageView');
+    </script>
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --navy: #0D1B2A;
+            --gold: #C9A96E;
+            --cream: #FAF6F0;
+            --charcoal: #2C2C2C;
+            --text: #3A3A3A;
+            --text-light: #6B6B6B;
+            --blue-accent: #6FB3E5;
+            --border: rgba(201,169,110,0.2);
+            --section-pad: clamp(60px, 8vw, 120px);
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'DM Sans', sans-serif;
+            color: var(--text);
+            background: var(--cream);
+            line-height: 1.6;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background: rgba(13, 27, 42, 0.95);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-logo {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--gold);
+            text-decoration: none;
+            letter-spacing: 0.5px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--cream);
+            text-decoration: none;
+            font-size: 0.95rem;
+            font-weight: 500;
+            transition: var(--transition);
+            position: relative;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--gold);
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            gap: 5px;
+            background: none;
+            border: none;
+        }
+
+        .hamburger span {
+            width: 25px;
+            height: 2px;
+            background: var(--gold);
+            transition: var(--transition);
+            transform-origin: center;
+        }
+
+        .hamburger.active span:nth-child(1) {
+            transform: rotate(45deg) translate(8px, 8px);
+        }
+
+        .hamburger.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .hamburger.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(7px, -7px);
+        }
+
+        @media (max-width: 768px) {
+            .hamburger {
+                display: flex;
+            }
+
+            .nav-links {
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                flex-direction: column;
+                gap: 0;
+                background: rgba(13, 27, 42, 0.98);
+                backdrop-filter: blur(20px);
+                max-height: 0;
+                overflow: hidden;
+                transition: max-height 0.3s ease;
+            }
+
+            .nav-links.active {
+                max-height: 300px;
+            }
+
+            .nav-links a {
+                display: block;
+                padding: 1rem 2rem;
+                border-top: 1px solid var(--border);
+            }
+
+            .nav-links a::after {
+                display: none;
+            }
+        }
+
+        /* Hero Section */
+        .hero {
+            margin-top: 60px;
+            padding: var(--section-pad) 2rem;
+            background: linear-gradient(135deg, var(--navy) 0%, #1a3a52 100%);
+            color: var(--cream);
+            text-align: center;
+            min-height: 400px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .hero h1 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(2.5rem, 6vw, 4rem);
+            font-weight: 700;
+            letter-spacing: 1px;
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+
+        .hero p {
+            font-size: clamp(1rem, 2vw, 1.1rem);
+            max-width: 600px;
+            opacity: 0.95;
+            line-height: 1.8;
+        }
+
+        /* Main Content */
+        main {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        /* Services Grid */
+        .services-section {
+            padding: var(--section-pad) 0;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .service-card {
+            background: white;
+            border: 1px solid var(--border);
+            padding: 2.5rem;
+            text-align: center;
+            transition: var(--transition);
+            border-radius: 4px;
+        }
+
+        .service-card:hover {
+            border-color: var(--gold);
+            box-shadow: 0 8px 24px rgba(201, 169, 110, 0.15);
+        }
+
+        .service-card h3 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(1.5rem, 3vw, 1.8rem);
+            font-weight: 600;
+            color: var(--navy);
+            margin-bottom: 1rem;
+            letter-spacing: 0.5px;
+        }
+
+        .service-card p {
+            color: var(--text-light);
+            font-size: 0.95rem;
+            line-height: 1.7;
+            margin-bottom: 1.5rem;
+        }
+
+        .service-card a {
+            display: inline-block;
+            padding: 0.75rem 1.5rem;
+            background: var(--navy);
+            color: var(--cream);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            letter-spacing: 0.5px;
+            transition: var(--transition);
+            border: 2px solid var(--navy);
+        }
+
+        .service-card a:hover {
+            background: transparent;
+            color: var(--navy);
+        }
+
+        /* Details Section */
+        .details-section {
+            padding: var(--section-pad) 0;
+            border-top: 1px solid var(--border);
+        }
+
+        .details-section h2 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(2rem, 4vw, 2.5rem);
+            font-weight: 600;
+            color: var(--navy);
+            margin-bottom: 2rem;
+            text-align: center;
+            letter-spacing: 0.5px;
+        }
+
+        .service-details {
+            background: white;
+            border: 1px solid var(--border);
+            padding: 2rem;
+            margin-bottom: 2rem;
+            border-radius: 4px;
+        }
+
+        .service-details h3 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.3rem;
+            color: var(--navy);
+            margin-bottom: 1rem;
+        }
+
+        .service-details p {
+            color: var(--text-light);
+            line-height: 1.8;
+            margin-bottom: 1rem;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            padding: var(--section-pad) 2rem;
+            background: linear-gradient(135deg, var(--navy) 0%, #1a3a52 100%);
+            color: var(--cream);
+            text-align: center;
+            margin: var(--section-pad) 0;
+            border-radius: 4px;
+        }
+
+        .cta-section h2 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(1.8rem, 4vw, 2.2rem);
+            font-weight: 600;
+            margin-bottom: 1rem;
+            letter-spacing: 0.5px;
+        }
+
+        .cta-section p {
+            font-size: 1rem;
+            max-width: 600px;
+            margin: 0 auto 2rem;
+            opacity: 0.95;
+            line-height: 1.8;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .cta-btn {
+            padding: 0.75rem 1.5rem;
+            background: var(--gold);
+            color: var(--navy);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            letter-spacing: 0.5px;
+            border: 2px solid var(--gold);
+            transition: var(--transition);
+            display: inline-block;
+            cursor: pointer;
+            border-radius: 2px;
+        }
+
+        .cta-btn:hover {
+            background: transparent;
+            color: var(--gold);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--navy);
+            color: var(--cream);
+            padding: var(--section-pad) 2rem;
+            margin-top: var(--section-pad);
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .footer-section h4 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+            color: var(--gold);
+            letter-spacing: 0.5px;
+        }
+
+        .footer-section p {
+            font-size: 0.9rem;
+            line-height: 1.8;
+            opacity: 0.85;
+        }
+
+        .footer-section a {
+            color: var(--cream);
+            text-decoration: none;
+            font-size: 0.9rem;
+            display: block;
+            margin: 0.5rem 0;
+            transition: var(--transition);
+        }
+
+        .footer-section a:hover {
+            color: var(--gold);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            margin-top: 2rem;
+            padding-top: 2rem;
+            border-top: 1px solid var(--border);
+            font-size: 0.85rem;
+            opacity: 0.7;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero {
+                margin-top: 60px;
+                min-height: 300px;
+                padding: 3rem 1rem;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .services-grid {
+                gap: 1.5rem;
+            }
+
+            .service-card {
+                padding: 1.5rem;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+            }
+
+            .cta-btn {
+                width: 100%;
+            }
+        }
+
+        /* Scroll Reveal Animation */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: var(--transition);
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-N7GPFWH"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <a href="KatieFlinnDesign_V2_Homepage.html" class="nav-logo">KFD</a>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="KatieFlinnDesign_V2_Homepage.html">Home</a></li>
+                <li><a href="KatieFlinnDesign_About.html">About</a></li>
+                <li><a href="KatieFlinnDesign_Jewellery.html">Jewellery</a></li>
+                <li><a href="KatieFlinnDesign_Gallery.html">Gallery</a></li>
+                <li><a href="KatieFlinnDesign_Courses.html">Courses</a></li>
+                <li><a href="KatieFlinnDesign_FAQ.html">FAQ</a></li>
+                <li><a href="KatieFlinnDesign_Contact.html">Contact</a></li>
+            </ul>
+            <button class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <h1>Handcrafted Jewellery</h1>
+        <p>Custom designs and timeless pieces created using traditional lost wax casting techniques</p>
+    </section>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Services Grid -->
+        <section class="services-section">
+            <div class="services-grid">
+                <!-- Shop Jewellery -->
+                <div class="service-card reveal">
+                    <h3>Shop Jewellery</h3>
+                    <p>Browse Katie's ready-to-wear collection of unique, handcrafted pieces. Each item is individually designed and cast using traditional lost wax techniques.</p>
+                    <a href="https://katieflinndesign.squarespace.com/shop" target="_blank">Shop Now</a>
+                </div>
+
+                <!-- Custom Commissions -->
+                <div class="service-card reveal">
+                    <h3>Custom Commissions</h3>
+                    <p>Work with Katie to create your perfect piece. From conceptualization to final casting, she'll guide you through the entire custom commission process.</p>
+                    <a href="KatieFlinnDesign_Contact.html">Request Commission</a>
+                </div>
+
+                <!-- Sold Gallery -->
+                <div class="service-card reveal">
+                    <h3>Sold Gallery</h3>
+                    <p>View Katie's past commissions and sold pieces. Get inspiration for your own custom design or find the perfect reference for your ideal piece.</p>
+                    <a href="https://katieflinndesign.squarespace.com/sold-gallery" target="_blank">View Gallery</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Detailed Service Information -->
+        <section class="details-section">
+            <h2>Our Services</h2>
+
+            <div class="service-details reveal">
+                <h3>Shop Jewellery</h3>
+                <p>Katie's ready-to-wear collection features a curated selection of unique handcrafted pieces. Each design is created individually using the traditional lost wax casting process, ensuring that no two pieces are exactly alike.</p>
+                <p>Whether you're looking for statement rings, delicate earrings, or bold necklaces, you'll find pieces that combine elegance with the artistry of traditional metalsmithing. Every item in the shop has been thoughtfully designed and executed to the highest standards of craftsmanship.</p>
+            </div>
+
+            <div class="service-details reveal">
+                <h3>Custom Commissions</h3>
+                <p>Have an idea for a bespoke piece? Katie specializes in bringing your vision to life. The custom commission process begins with a consultation where you can discuss your ideas, inspirations, and preferences.</p>
+                <p>From there, Katie will develop sketches and concepts, refining the design until it perfectly captures your vision. Once approved, she'll cast the piece using the lost wax casting technique, ensuring exceptional quality and detail. Custom commissions are perfect for engagement rings, heirlooms, special occasion pieces, or any design you've been dreaming of.</p>
+            </div>
+
+            <div class="service-details reveal">
+                <h3>Sold Gallery</h3>
+                <p>Browse Katie's collection of previously commissioned and sold pieces. This gallery showcases the range of designs she's created for satisfied clients and provides inspiration for your own custom commission.</p>
+                <p>Each piece tells a story and demonstrates the versatility and quality of Katie's work. While these specific pieces are no longer available, they serve as excellent references if you'd like to commission something similar or draw inspiration for your own unique design.</p>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="cta-section reveal">
+            <h2>Ready to Get Started?</h2>
+            <p>Whether you want to explore the ready-to-wear collection, commission a custom piece, or simply get inspired by past designs, Katie is ready to help.</p>
+            <div class="cta-buttons">
+                <a href="https://katieflinndesign.squarespace.com/shop" class="cta-btn" target="_blank">Shop Now</a>
+                <a href="KatieFlinnDesign_Contact.html" class="cta-btn">Get in Touch</a>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>Explore</h4>
+                <a href="KatieFlinnDesign_V2_Homepage.html">Home</a>
+                <a href="KatieFlinnDesign_About.html">About</a>
+                <a href="KatieFlinnDesign_Jewellery.html">Jewellery</a>
+                <a href="KatieFlinnDesign_Gallery.html">Gallery</a>
+            </div>
+            <div class="footer-section">
+                <h4>More</h4>
+                <a href="KatieFlinnDesign_Courses.html">Courses</a>
+                <a href="KatieFlinnDesign_FAQ.html">FAQ</a>
+                <a href="KatieFlinnDesign_Contact.html">Contact</a>
+                <a href="https://katieflinndesign.squarespace.com/shop" target="_blank">Shop</a>
+            </div>
+            <div class="footer-section">
+                <h4>Connect</h4>
+                <a href="https://instagram.com/katieflinndesign" target="_blank">Instagram</a>
+                <a href="mailto:hello@katieflinndesign.com.au">Email</a>
+                <p style="margin-top: 1rem; font-size: 0.85rem;">PO Box 1141<br>Elsternwick, VIC 3185<br>Australia</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Katie Flinn Design. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Facebook Pixel (noscript) -->
+    <noscript><img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=327540794544886&ev=PageView&noscript=1"
+    /></noscript>
+
+    <script>
+        // Mobile Navigation Toggle
+        const hamburger = document.getElementById('hamburger');
+        const navLinks = document.getElementById('navLinks');
+
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+            navLinks.classList.toggle('active');
+        });
+
+        // Close menu when a link is clicked
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                hamburger.classList.remove('active');
+                navLinks.classList.remove('active');
+            });
+        });
+
+        // Scroll Reveal Animation
+        const reveals = document.querySelectorAll('.reveal');
+
+        function reveal() {
+            reveals.forEach(element => {
+                const windowHeight = window.innerHeight;
+                const elementTop = element.getBoundingClientRect().top;
+                const elementVisible = 150;
+
+                if (elementTop < windowHeight - elementVisible) {
+                    element.classList.add('active');
+                }
+            });
+        }
+
+        window.addEventListener('scroll', reveal);
+        reveal();
+    </script>
+</body>
+</html>
